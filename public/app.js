@@ -494,12 +494,12 @@ function renderGrid(filter = currentFilter, searchTerm = '') {
     let actionsHtml = '';
 
     if (item.isWorkflow) {
-      const waMsg = encodeURIComponent(`Olá João! Vi a automação n8n "${item.title}" no seu portfólio (portfolio.jpstudio.tech) e gostaria de integrá-la na minha operação.`);
+      const waMsg = encodeURIComponent(`Olá João! Vi a automação n8n "${item.title}" no seu portfólio (portifolio.jpstudio.tech) e gostaria de integrá-la na minha operação.`);
       actionsHtml = `
         <button class="btn btn-primary" onclick="openWorkflowModal('${item.id}')">
           ⚡ Ver Detalhes
         </button>
-        <a href="https://wa.me/5551996160105?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        <a href="https://wa.me/5551998196232?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
           💬 Adquirir Fluxo
         </a>
       `;
@@ -516,13 +516,13 @@ function renderGrid(filter = currentFilter, searchTerm = '') {
       const isCalc = item.category === 'calculadoras';
       const previewText = isCalc ? '🧮 Usar Calculadora' : '👁️ Ver Demonstração';
       const ctaText = item.category === 'saas' ? '💬 Solicitar Licença' : (isCalc ? '💬 Solicitar Ferramenta' : '💬 Contratar Esse Modelo');
-      const waMsg = encodeURIComponent(`Olá João! Vi o ativo "${item.title}" no seu portfólio (portfolio.jpstudio.tech) e gostaria de solicitar uma demonstração comercial/licença.`);
+      const waMsg = encodeURIComponent(`Olá João! Vi o ativo "${item.title}" no seu portfólio (portifolio.jpstudio.tech) e gostaria de solicitar uma demonstração comercial/licença.`);
 
       actionsHtml = `
         <button class="btn btn-primary" onclick="openPreview('${item.title}', '${item.previewUrl}', '${item.type}')">
           ${previewText}
         </button>
-        <a href="https://wa.me/5551996160105?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        <a href="https://wa.me/5551998196232?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
           ${ctaText}
         </a>
       `;
@@ -605,7 +605,7 @@ window.openWorkflowModal = function(id) {
   
   modalTitle.textContent = item.title + ' (Automação n8n)';
   
-  const waLink = `https://wa.me/5551996160105?text=${encodeURIComponent(`Olá João! Gostaria de conversar sobre a implantação do fluxo n8n: ${item.title}`)}`;
+  const waLink = `https://wa.me/5551998196232?text=${encodeURIComponent(`Olá João! Gostaria de conversar sobre a implantação do fluxo n8n: ${item.title}`)}`;
   
   iframe.srcdoc = `
     <!DOCTYPE html>
