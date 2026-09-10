@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jpstudio.ia — Marketing estratégico + IA aplicada</title>
+  <meta name="description" content="Consultoria estratégica em Marketing & IA para empresas que querem liderar seu mercado. Você decide. A IA faz o resto.">
+
+  <!-- Favicon SVG inline (avatar jp.) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><rect width='400' height='400' fill='%23f5f1ea'/><text x='200' y='270' text-anchor='middle' font-family='Times New Roman, serif' font-size='220' fill='%230a0a0a' letter-spacing='-8'>jp<tspan fill='%23c89860' font-style='italic'>.</tspan></text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Cores oficiais */
+      --bg: #f5f1ea;
+      --bg-dark: #0a0a0a;
+      --bg-elevated: #ffffff;
+      --text: #0a0a0a;
+      --text-on-dark: #f5f1ea;
+      --text-dim: #666666;
+      --text-dim-on-dark: #888888;
+      --gold: #c89860;
+      --gold-bright: #d4af7f;
+      --border: #e0d8c8;
+      --border-dark: #1f1f1f;
+
+      /* Tipografia */
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'Fraunces', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+      /* Layout */
+      --max-width: 1280px;
+      --gutter: 32px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--gold); color: var(--bg); }
+
+    /* ===== Tipografia base ===== */
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.02;
+    }
+
+    h1 { font-size: clamp(56px, 9vw, 132px); }
+    h2 { font-size: clamp(40px, 6vw, 80px); }
+    h3 { font-size: clamp(24px, 3vw, 36px); }
+
+    em { font-style: italic; color: var(--gold); }
+
+    p { max-width: 60ch; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ===== Wrapper ===== */
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    .section {
+      padding: 140px 0;
+      position: relative;
+    }
+    .section + .section { padding-top: 0; }
+
+    /* ===== Brand wordmark ===== */
+    .brand {
+      font-family: var(--font-display);
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      display: inline-block;
+    }
+    .brand em { font-style: italic; color: var(--gold); }
+
+    /* ===== Nav ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 24px var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      mix-blend-mode: difference;
+      color: #f5f1ea;
+    }
+    .nav .brand { color: inherit; }
+    .nav .brand em { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+    }
+
+    /* ===== CTAs ===== */
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text);
+      color: var(--text-on-dark);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      padding: 20px 36px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta-primary:hover { background: #1a1a1a; transform: translateY(-1px); }
+    .cta-primary .arrow {
+      color: var(--gold-bright);
+      transition: transform 0.2s;
+    }
+    .cta-primary:hover .arrow { transform: translateX(4px); }
+
+    .cta-primary.inverse {
+      background: var(--text-on-dark);
+      color: var(--text);
+    }
+    .cta-primary.inverse:hover { background: #fff; }
+    .cta-primary.inverse .arrow { color: var(--gold); }
+
+    .cta-secondary {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 22px;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+    .cta-secondary:hover { opacity: 0.7; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      padding: 160px var(--gutter) 80px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-content: space-between;
+      gap: 60px;
+      position: relative;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-block {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .hero-meta-block strong {
+      color: var(--text);
+      font-weight: 500;
+      display: block;
+      margin-top: 6px;
+    }
+    .hero-meta-block em { font-style: italic; color: var(--gold); }
+
+    .hero-main { display: grid; gap: 40px; }
+
+    .hero h1 {
+      max-width: 14ch;
+    }
+
+    .hero-subhead {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: clamp(18px, 1.8vw, 22px);
+      line-height: 1.5;
+      color: var(--text-dim);
+      max-width: 52ch;
+    }
+    .hero-subhead strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .hero-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-footer-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 22px;
+      max-width: 28ch;
+    }
+    .hero-footer-meta {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: right;
+    }
+
+    /* ===== Section: Manifesto ===== */
+    .manifesto {
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
+      padding: 160px 0;
+      margin-top: 80px;
+      overflow: hidden;
+      position: relative;
+    }
+    .manifesto .eyebrow { color: var(--gold-bright); }
+    .manifesto .eyebrow::before { background: var(--gold-bright); }
+
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .manifesto-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    .manifesto-left .mono {
+      color: var(--text-dim-on-dark);
+    }
+
+    .manifesto h2 {
+      margin: 32px 0 56px;
+      max-width: 16ch;
+    }
+    .manifesto h2 em { color: var(--gold-bright); }
+
+    .manifesto-body {
+      display: grid;
+      gap: 28px;
+      max-width: 60ch;
+    }
+    .manifesto-body p {
+      font-family: var(--font-body);
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-on-dark);
+    }
+    .manifesto-body p strong {
+      font-weight: 400;
+      color: var(--gold-bright);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-size: 21px;
+    }
+
+    .manifesto-signature {
+      margin-top: 72px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-dim-on-dark);
+    }
+    .manifesto-signature strong {
+      color: var(--text-on-dark);
+      font-weight: 500;
+    }
+    .manifesto-signature em {
+      font-style: italic;
+      color: var(--gold-bright);
+      font-family: var(--font-display);
+      font-size: 16px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* ===== Section: Filosofia (3 verdades) ===== */
+    .filosofia {
+      padding: 160px 0;
+    }
+    .filosofia-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 100px;
+    }
+    @media (max-width: 900px) {
+      .filosofia-header { grid-template-columns: 1fr; gap: 32px; }
+    }
+    .filosofia h2 { max-width: 14ch; }
+    .filosofia-header p {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 1.6;
+      color: var(--text-dim);
+      max-width: 42ch;
+    }
+
+    .verdades {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--text);
+    }
+    @media (max-width: 900px) {
+      .verdades { grid-template-columns: 1fr; }
+    }
+
+    .verdade {
+      padding: 56px 40px 56px 0;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .verdade:last-child { border-right: none; padding-right: 0; }
+    .verdade:not(:first-child) { padding-left: 40px; }
+    @media (max-width: 900px) {
+      .verdade {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 40px 0 !important;
+      }
+      .verdade:last-child { border-bottom: none; }
+    }
+
+    .verdade-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 96px;
+      line-height: 0.85;
+      margin-bottom: 32px;
+    }
+    .verdade h3 {
+      margin-bottom: 20px;
+      max-width: 14ch;
+    }
+    .verdade h3 em { color: var(--gold); }
+    .verdade p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-dim);
+    }
+
+    /* ===== Section: Método ===== */
+    .metodo {
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
+      padding: 160px 0;
+    }
+    .metodo .eyebrow { color: var(--gold-bright); }
+    .metodo .eyebrow::before { background: var(--gold-bright); }
+
+    .metodo-header {
+      max-width: 920px;
+      margin-bottom: 120px;
+    }
+    .metodo h2 {
+      margin-top: 32px;
+      max-width: 18ch;
+    }
+    .metodo h2 em { color: var(--gold-bright); }
+
+    .passos {
+      display: grid;
+      gap: 0;
+    }
+
+    .passo {
+      display: grid;
+      grid-template-columns: 120px 1fr 1.5fr;
+      gap: 40px;
+      align-items: start;
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .passo:first-child { border-top: 1px solid var(--border-dark); }
+    @media (max-width: 900px) {
+      .passo { grid-template-columns: 1fr; gap: 16px; padding: 40px 0; }
+    }
+
+    .passo-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--gold-bright);
+      font-size: 80px;
+      line-height: 0.85;
+    }
+    .passo-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 2.4vw, 32px);
+      line-height: 1.1;
+      max-width: 12ch;
+    }
+    .passo-title em { color: var(--gold-bright); }
+    .passo-body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-dim-on-dark);
+      max-width: 50ch;
+    }
+    .passo-body strong {
+      color: var(--text-on-dark);
+      font-weight: 400;
+    }
+
+    /* ===== Section: Impacto (Antes/Depois) ===== */
+    .impacto {
+      padding: 160px 0;
+    }
+    .impacto-header {
+      max-width: 920px;
+      margin-bottom: 100px;
+    }
+    .impacto h2 {
+      margin-top: 32px;
+      max-width: 16ch;
+    }
+
+    .transformacoes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    @media (max-width: 720px) {
+      .transformacoes { grid-template-columns: 1fr; }
+    }
+
+    .col-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--text);
+    }
+    .col-label.antes {
+      color: var(--text-dim);
+      background: transparent;
+    }
+    .col-label.depois {
+      color: var(--gold);
+      background: transparent;
+    }
+    @media (max-width: 720px) {
+      .col-label { padding-left: 0; padding-right: 0; }
+    }
+
+    .linha {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    @media (max-width: 720px) {
+      .linha { grid-template-columns: 1fr; }
+      .linha .cell:first-child {
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    .cell {
+      padding: 40px 32px;
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.25;
+    }
+    .cell.antes {
+      color: var(--text-dim);
+      border-right: 1px solid var(--border);
+    }
+    .cell.depois em {
+      color: var(--gold);
+      font-style: italic;
+    }
+    @media (max-width: 720px) {
+      .cell { padding: 24px 0; border-right: none !important; }
+    }
+
+    /* ===== Section: Founder ===== */
+    .founder {
+      padding: 160px 0;
+      background: var(--bg);
+      position: relative;
+      border-top: 1px solid var(--border);
+    }
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 80px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .founder-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .founder-card {
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      padding: 48px 40px;
+      border-radius: 4px;
+    }
+    .founder-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 56px;
+      line-height: 1;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+    }
+    .founder-avatar em { color: var(--gold); font-style: italic; }
+    .founder-card h4 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .founder-card .role {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+    }
+    .founder-card .role em {
+      color: var(--gold);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-size: 16px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .founder-card .meta {
+      display: grid;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .founder-card .meta div {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .founder-card .meta strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .founder-text h2 { margin: 32px 0; max-width: 14ch; }
+    .founder-text h2 em { color: var(--gold); }
+    .founder-text p {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 20px;
+      max-width: 56ch;
+    }
+
+    /* ===== Section: CTA Final ===== */
+    .cta-final {
+      padding: 180px var(--gutter);
+      text-align: center;
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
+      position: relative;
+    }
+    .cta-final .eyebrow {
+      color: var(--gold-bright);
+      justify-content: center;
+    }
+    .cta-final .eyebrow::before { background: var(--gold-bright); }
+    .cta-final .eyebrow::after {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold-bright);
+    }
+    .cta-final h2 {
+      margin: 40px auto 32px;
+      max-width: 14ch;
+      font-size: clamp(48px, 8vw, 112px);
+    }
+    .cta-final h2 em { color: var(--gold-bright); }
+    .cta-final-sub {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 20px;
+      color: var(--text-dim-on-dark);
+      max-width: 48ch;
+      margin: 0 auto 56px;
+      line-height: 1.6;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--bg);
+      padding: 80px var(--gutter) 40px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      margin-bottom: 80px;
+    }
+    @media (max-width: 720px) {
+      .footer-top { grid-template-columns: 1fr; gap: 48px; }
+    }
+    .footer-brand .brand { font-size: 36px; }
+    .footer-brand .tagline {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      max-width: 200px;
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    @media (max-width: 720px) {
+      .footer-cols { grid-template-columns: 1fr 1fr; }
+    }
+    .footer-col h5 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    .footer-col ul { list-style: none; display: grid; gap: 12px; }
+    .footer-col a {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 16px;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-col em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .footer-bottom em {
+      color: var(--gold);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* ===== Reveal animation (subtle) ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal.delay-1 { transition-delay: 0.1s; }
+    .reveal.delay-2 { transition-delay: 0.2s; }
+    .reveal.delay-3 { transition-delay: 0.3s; }
+    .reveal.delay-4 { transition-delay: 0.4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <a href="#top" class="brand">jpstudio<em>.ia</em></a>
+    <div class="nav-links">
+      <a href="#manifesto">Manifesto</a>
+      <a href="#metodo">Método</a>
+      <a href="#fundador">Fundador</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-meta reveal">
+      <div class="hero-meta-block">
+        Consultoria de <em>Marketing &amp; IA</em>
+        <strong>Estratégia · Decisão · Escala</strong>
+      </div>
+      <div class="hero-meta-block">
+        Edição
+        <strong>01 / Maio · 2026</strong>
+      </div>
+      <div class="hero-meta-block">
+        Capão da Canoa
+        <strong>RS · Brasil</strong>
+      </div>
+    </div>
+
+    <div class="hero-main">
+      <span class="eyebrow reveal delay-1">Marketing estratégico + IA aplicada</span>
+      <h1 class="reveal delay-2">Pare de operar.<br>Comece a <em>escalar</em>.</h1>
+      <p class="hero-subhead reveal delay-3">
+        Consultoria estratégica para empresas que querem <strong>liderar seu mercado</strong> através de decisões inteligentes — não execução acelerada.
+      </p>
+      <div class="hero-actions reveal delay-4">
+        <a href="https://wa.me/5551998196232?text=Ol%C3%A1%2C%20Jo%C3%A3o%20Pedro.%20Vim%20pelo%20site%20da%20jpstudio.ia%20e%20quero%20agendar%20uma%20conversa." target="_blank" rel="noopener" class="cta-primary">
+          Agende uma conversa <span class="arrow">→</span>
+        </a>
+        <a href="#metodo" class="cta-secondary">conheça o método</a>
+      </div>
+    </div>
+
+    <div class="hero-footer reveal delay-4">
+      <p class="hero-footer-quote">"Você decide. A IA faz o resto."</p>
+      <div class="hero-footer-meta">
+        Promessa central<br>
+        Jpstudio.ia · 2026
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MANIFESTO ===== -->
+  <section class="manifesto" id="manifesto">
+    <div class="wrap">
+      <div class="manifesto-grid">
+        <div class="manifesto-left reveal">
+          <span class="eyebrow">Manifesto · 01</span>
+          <p class="mono" style="margin-top: 32px; color: #888;">Capítulo de abertura</p>
+        </div>
+
+        <div class="manifesto-right">
+          <h2 class="reveal delay-1">A estratégia <em>vence</em> o operacional.</h2>
+
+          <div class="manifesto-body">
+            <p class="reveal delay-2">
+              O marketing acabou de mudar. <strong>De novo.</strong> Só que dessa vez, a régua não é quem produz mais conteúdo, quem responde mais rápido ou quem domina a próxima ferramenta. A régua é quem <em>decide</em> melhor.
+            </p>
+            <p class="reveal delay-2">
+              Código virou commodity. Execução virou commodity. O que sobrou de escasso — e do que ninguém fala em LinkedIn — é a capacidade de olhar para uma operação inteira e perguntar: <em>onde, exatamente, vale a pena pensar?</em>
+            </p>
+            <p class="reveal delay-3">
+              É isso que fazemos. Mapeamos onde sua equipe perde tempo. Definimos o que precisa de cabeça humana e o que pode ser delegado para IA. Devolvemos a você o único ativo que não escala sozinho: <strong>tempo para decidir</strong>.
+            </p>
+          </div>
+
+          <div class="manifesto-signature reveal delay-3">
+            <div>
+              <em>Assinado</em><br>
+              <strong>João Pedro Schmitz</strong> · Fundador
+            </div>
+            <div style="text-align: right;">
+              JPSTUDIO.IA<br>
+              MAIO · 2026
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FILOSOFIA — 3 VERDADES ===== -->
+  <section class="filosofia" id="filosofia">
+    <div class="wrap">
+      <div class="filosofia-header">
+        <div>
+          <span class="eyebrow reveal">Filosofia · 02</span>
+          <h2 class="reveal delay-1" style="margin-top: 32px;">Três verdades <em>inegociáveis</em>.</h2>
+        </div>
+        <p class="reveal delay-2">
+          Tudo o que fazemos parte daqui. Não são slogans — são lentes. Se uma decisão não passa por essas três, ela não sai do nosso estúdio.
+        </p>
+      </div>
+
+      <div class="verdades">
+        <div class="verdade reveal delay-1">
+          <div class="verdade-num">01</div>
+          <h3>Estratégia vence o <em>operacional</em>.</h3>
+          <p>Quem só executa, vira função. Quem decide, vira referência. A diferença entre escalar e estagnar nunca foi velocidade — sempre foi clareza de prioridade.</p>
+        </div>
+
+        <div class="verdade reveal delay-2">
+          <div class="verdade-num">02</div>
+          <h3>Código virou <em>commodity</em>.</h3>
+          <p>A vantagem competitiva deixou de ser técnica. Qualquer ferramenta que custava milhões agora roda numa API. O que sobra de escasso é julgamento: saber o que fazer, não como fazer.</p>
+        </div>
+
+        <div class="verdade reveal delay-3">
+          <div class="verdade-num">03</div>
+          <h3>Clareza vence <em>velocidade</em>.</h3>
+          <p>Times confusos correm muito e chegam em lugar nenhum. Agenda lotada não é sinal de sucesso — é, quase sempre, o sintoma de uma estratégia que ninguém escreveu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MÉTODO ===== -->
+  <section class="metodo" id="metodo">
+    <div class="wrap">
+      <div class="metodo-header reveal">
+        <span class="eyebrow">Como trabalhamos · 03</span>
+        <h2>Três passos para <em>escalar</em> sem caos.</h2>
+      </div>
+
+      <div class="passos">
+        <div class="passo reveal">
+          <div class="passo-num">01</div>
+          <div class="passo-title">Diagnóstico <em>estratégico</em></div>
+          <p class="passo-body">
+            Mergulhamos na sua operação por duas semanas. <strong>Mapeamos cada tarefa repetitiva</strong>, cada decisão delegada errado, cada ponto onde sua equipe vira refém da rotina. O entregável: um mapa cirúrgico do que precisa mudar — antes de qualquer ferramenta.
+          </p>
+        </div>
+
+        <div class="passo reveal delay-1">
+          <div class="passo-num">02</div>
+          <div class="passo-title">Arquitetura de <em>decisões</em></div>
+          <p class="passo-body">
+            Definimos a decisão antes da ferramenta. Construímos os frameworks que sua liderança vai usar nos próximos doze meses: o que delegar para IA, o que mantém na mão humana, e <strong>como medir o que importa</strong> sem se perder em vaidade de métricas.
+          </p>
+        </div>
+
+        <div class="passo reveal delay-2">
+          <div class="passo-num">03</div>
+          <div class="passo-title">Implementação <em>aplicada</em></div>
+          <p class="passo-body">
+            Implantamos IA nos pontos certos — não em tudo. Treinamos sua equipe a operar o novo método. Acompanhamos por noventa dias até que o sistema rode sozinho. <strong>Saímos quando você não precisa mais de nós</strong>. É esse o objetivo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IMPACTO — Antes/Depois ===== -->
+  <section class="impacto" id="impacto">
+    <div class="wrap">
+      <div class="impacto-header reveal">
+        <span class="eyebrow">Impacto · 04</span>
+        <h2>O que <em>transformamos</em> na sua empresa.</h2>
+      </div>
+
+      <div class="transformacoes reveal delay-1">
+        <div class="col-label antes">Antes</div>
+        <div class="col-label depois">Depois</div>
+
+        <div class="linha">
+          <div class="cell antes">Equipe apagando incêndio o dia inteiro.</div>
+          <div class="cell depois">Equipe focada no que <em>só ela</em> pode fazer.</div>
+        </div>
+
+        <div class="linha">
+          <div class="cell antes">Marketing produzindo conteúdo no improviso.</div>
+          <div class="cell depois">Conteúdo saindo de uma <em>arquitetura</em> editorial.</div>
+        </div>
+
+        <div class="linha">
+          <div class="cell antes">Decisões tomadas com base em achismo.</div>
+          <div class="cell depois">Decisões saindo de um <em>framework</em> claro.</div>
+        </div>
+
+        <div class="linha">
+          <div class="cell antes">"Não temos tempo para nada estratégico."</div>
+          <div class="cell depois">Estratégia é a única <em>conversa</em> da semana.</div>
+        </div>
+
+        <div class="linha">
+          <div class="cell antes">Crescer significa contratar mais gente.</div>
+          <div class="cell depois">Crescer significa <em>decidir</em> melhor.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FUNDADOR ===== -->
+  <section class="founder" id="fundador">
+    <div class="wrap">
+      <div class="founder-grid">
+        <div class="founder-card reveal">
+          <div class="founder-avatar">jp<em>.</em></div>
+          <h4>João Pedro Schmitz</h4>
+          <div class="role"><em>Fundador</em> · Estratégia &amp; IA</div>
+          <div class="meta">
+            <div><span>Base</span><strong>Capão da Canoa · RS</strong></div>
+            <div><span>Foco</span><strong>Marketing &amp; IA</strong></div>
+            <div><span>Atua com</span><strong>CEOs &amp; Fundadores</strong></div>
+            <div><span>Desde</span><strong>2026</strong></div>
+          </div>
+        </div>
+
+        <div class="founder-text">
+          <span class="eyebrow reveal">Quem assina · 05</span>
+          <h2 class="reveal delay-1">Consultoria de <em>autor</em>, não de planilha.</h2>
+          <p class="reveal delay-2">
+            Cada projeto da JPStudio.ia passa pela minha cabeça antes de virar entregável. Não somos uma agência — somos um estúdio. Pequeno por escolha, sênior por obrigação.
+          </p>
+          <p class="reveal delay-2">
+            Trabalho com poucos clientes ao mesmo tempo, e isso não vai mudar. Quando você fecha um projeto comigo, está contratando alguém que vai pensar na sua empresa de verdade — não um time de júnior que recebe um briefing e devolve um deck.
+          </p>
+          <p class="reveal delay-3">
+            Se isso fizer sentido para você, vamos conversar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-final" id="contato">
+    <span class="eyebrow reveal">Próximo passo</span>
+    <h2 class="reveal delay-1">Pronto para <em>decidir</em> melhor?</h2>
+    <p class="cta-final-sub reveal delay-2">
+      Uma conversa de 30 minutos. Sem deck, sem proposta enlatada. Você sai com um diagnóstico honesto se faz sentido — ou não — trabalharmos juntos.
+    </p>
+    <a href="https://wa.me/5551998196232?text=Ol%C3%A1%2C%20Jo%C3%A3o%20Pedro.%20Vim%20pelo%20site%20da%20jpstudio.ia%20e%20quero%20agendar%20uma%20conversa." target="_blank" rel="noopener" class="cta-primary inverse reveal delay-3">
+      Agende uma conversa <span class="arrow">→</span>
+    </a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#top" class="brand">jpstudio<em>.ia</em></a>
+          <div class="tagline">Marketing &amp; IA</div>
+        </div>
+
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Navegação</h5>
+            <ul>
+              <li><a href="#manifesto">Manifesto</a></li>
+              <li><a href="#filosofia">Filosofia</a></li>
+              <li><a href="#metodo">Método</a></li>
+              <li><a href="#fundador">Fundador</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Contato</h5>
+            <ul>
+              <li><a href="mailto:contato@jpstudio.tech">contato@jpstudio.tech</a></li>
+              <li><a href="https://ia.jpstudio.tech">ia.jpstudio.tech</a></li>
+              <li><a href="https://bio.jpstudio.tech">bio.jpstudio.tech</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Social</h5>
+            <ul>
+              <li><a href="https://instagram.com/jpstudio.ia"><em>@</em>jpstudio.ia</a></li>
+              <li><a href="https://instagram.com/jpschmitzz"><em>@</em>jpschmitzz</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 JPSTUDIO.IA · Capão da Canoa · Brasil</div>
+        <div><em>Você decide.</em> A IA faz o resto.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal on scroll — sutil, em respeito ao princípio de "sem animações exageradas"
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CobrançaZap OS — Demonstração da Plataforma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(16, 22, 34, 0.85);
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #00e676;
+      --text: #f0f3f8;
+      --text-muted: #8c9bb0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 230, 118, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    h1 { font-size: 1.6rem; font-weight: 800; margin-top: 6px; }
+    p.lead { color: var(--text-muted); font-size: 0.95rem; margin-top: 4px; }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #00e676;
+      color: #05140b;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-wa:hover { background: #00c853; transform: translateY(-1px); }
+    
+    .screenshot-box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      margin-bottom: 28px;
+    }
+    .screenshot-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .grid-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .feat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .feat-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: #fff; }
+    .feat-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
+    
+    .tech-specs {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #cbd5e1;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <span class="badge">⚡ Arquitetura White Label Homologada</span>
+        <h1>CobrançaZap OS</h1>
+        <p class="lead">Régua de Cobrança Automática Pix no WhatsApp com Split e Recuperação Ativa</p>
+      </div>
+      <a href="https://wa.me/5551996160105?text=Ol%C3%A1%20Jo%C3%A3o,%20vi%20o%20Cobran%C3%A7aZap%20OS%20no%20portfolio.jpstudio.tech%20e%20gostaria%20de%20uma%20demonstra%C3%A7%C3%A3o%20comercial." target="_blank" class="btn-wa">
+        💬 Solicitar Licença / Deploy
+      </a>
+    </div>
+
+    <div class="screenshot-box">
+      <img src="/screenshots/saas_cobrancazap.png" alt="Interface CobrançaZap OS">
+    </div>
+
+    <div class="grid-features">
+      <div class="feat-card">
+        <h3>⚡ Régua Inteligente</h3>
+        <p>Disparos automáticos preventivos na véspera, no vencimento e pós-vencimento sem constrangimento.</p>
+      </div>
+      <div class="feat-card">
+        <h3>💳 Pix Copia-e-Cola</h3>
+        <p>Geração instantânea de QR Code e chave copia-e-cola com baixa automática via webhook.</p>
+      </div>
+      <div class="feat-card">
+        <h3>📊 Gestão Financeira</h3>
+        <p>Painel de controle com status por cliente, métricas de recuperação e alertas de taxa de conversão.</p>
+      </div>
+      <div class="feat-card">
+        <h3>🏷️ Modelo White Label</h3>
+        <p>Pronto para receber a identidade visual, domínio e gateway da sua empresa ou dos seus clientes.</p>
+      </div>
+    </div>
+
+    <div class="tech-specs">
+      <div>
+        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">Stack Tecnológica Homologada</span>
+        <div class="tags">
+          <span class="tag">Next.js 16 (App Router)</span>
+          <span class="tag">React 19</span>
+          <span class="tag">Tailwind CSS v4</span>
+          <span class="tag">Evolution API WhatsApp</span>
+          <span class="tag">Webhooks Asaas / MP</span>
+        </div>
+      </div>
+      <div>
+        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">Modelo Comercial Sugerido</span>
+        <strong style="color: var(--accent); font-size: 0.95rem;">SaaS Recorrente: R$ 97 a R$ 297/mês</strong>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

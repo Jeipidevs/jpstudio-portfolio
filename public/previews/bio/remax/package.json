@@ -1,0 +1,9 @@
+{
+  "name": "remaxvip-link-in-bio-equipe",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test"
+  }
+}

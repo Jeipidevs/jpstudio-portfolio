@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thairon Domingos | Growth & Traffic Specialist</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                        },
+                        accent: '#f97316',
+                        surface: '#0a0a0a',
+                        card: '#161616',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(22, 22, 22, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            filter: blur(60px);
+            z-index: -1;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 glass py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent rounded-xl flex items-center justify-center font-bold text-xl">T</div>
+                <span class="font-heading font-extrabold text-xl tracking-tight">THAIRON <span class="text-primary-500">DOMINGOS</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 font-medium text-sm uppercase tracking-widest opacity-70">
+                <a href="#results" class="hover:text-primary-500 transition-colors">Resultados</a>
+                <a href="#services" class="hover:text-primary-500 transition-colors">Serviços</a>
+                <a href="#contact" class="hover:text-accent transition-colors">Contato</a>
+            </div>
+            <button class="bg-primary-600 hover:bg-primary-500 px-6 py-2 rounded-full font-bold text-sm transition-all shadow-lg shadow-primary-900/20">
+                WHATSAPP
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-20 px-6 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+        <!-- Background Hero Image -->
+        <div class="absolute inset-0 -z-20 opacity-20 bg-cover bg-center grayscale" style="background-image: url('./hero.png');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent -z-10"></div>
+        
+        <!-- Profile Image Small -->
+        <div class="relative mb-8 reveal">
+            <div class="w-32 h-32 rounded-full border-4 border-primary-500/30 overflow-hidden shadow-2xl relative z-10 mx-auto">
+                <img src="./tairon.png" alt="Thairon Domingos" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-accent rounded-full flex items-center justify-center border-4 border-surface z-20">
+                <i class="fas fa-check text-xs text-white"></i>
+            </div>
+            <!-- Glow Effect -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-primary-500/20 blur-2xl rounded-full -z-10"></div>
+        </div>
+
+        <div class="reveal active">
+            <span class="px-4 py-1 rounded-full border border-primary-500/30 text-primary-500 text-xs font-bold uppercase tracking-widest mb-6 inline-block">Growth & Traffic Specialist</span>
+            <h1 class="font-heading text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Escale seu Negócio com <br>
+                <span class="text-gradient">Inteligência de Dados</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Transformo investimentos em anúncios em lucros previsíveis. Estratégias personalizadas para Google Ads, Meta Ads e Funis de Alta Conversão.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5545998258711" class="px-8 py-4 bg-primary-600 hover:bg-primary-500 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-primary-900/40">
+                    Começar Escala Agora
+                </a>
+                <a href="#results" class="px-8 py-4 glass rounded-full font-bold text-lg hover:bg-white/5 transition-all">
+                    Ver Resultados
+                </a>
+            </div>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 w-full max-w-5xl reveal">
+            <div class="glass p-8 rounded-3xl text-left hover:border-primary-500/50 transition-all group">
+                <div class="text-primary-500 text-3xl mb-4"><i class="fas fa-chart-line"></i></div>
+                <h3 class="text-4xl font-bold font-heading mb-2">450%+</h3>
+                <p class="text-gray-500 font-medium uppercase tracking-wider text-xs">ROI Médio em Campanhas</p>
+            </div>
+            <div class="glass p-8 rounded-3xl text-left hover:border-accent/50 transition-all group">
+                <div class="text-accent text-3xl mb-4"><i class="fas fa-hand-holding-dollar"></i></div>
+                <h3 class="text-4xl font-bold font-heading mb-2">R$ 1M+</h3>
+                <p class="text-gray-500 font-medium uppercase tracking-wider text-xs">Investimento Gerenciado</p>
+            </div>
+            <div class="glass p-8 rounded-3xl text-left hover:border-white/50 transition-all group">
+                <div class="text-white text-3xl mb-4"><i class="fas fa-bullseye"></i></div>
+                <h3 class="text-4xl font-bold font-heading mb-2">500k+</h3>
+                <p class="text-gray-500 font-medium uppercase tracking-wider text-xs">Leads Qualificados Gerados</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="font-heading text-4xl font-extrabold mb-4">Estratégias de Elite</h2>
+            <p class="text-gray-400">Métodos comprovados para dominar o mercado.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-card p-8 rounded-3xl border border-white/5 hover:border-primary-500/30 transition-all reveal">
+                <div class="w-14 h-14 bg-primary-500/10 rounded-2xl flex items-center justify-center text-primary-500 text-2xl mb-6">
+                    <i class="fab fa-google"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-4">Google Ads</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">Domine as buscas e apareça para quem já quer comprar seu produto.</p>
+            </div>
+            <div class="bg-card p-8 rounded-3xl border border-white/5 hover:border-primary-500/30 transition-all reveal">
+                <div class="w-14 h-14 bg-primary-500/10 rounded-2xl flex items-center justify-center text-primary-500 text-2xl mb-6">
+                    <i class="fab fa-meta"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-4">Meta Ads</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">Segmentação ultra-precisa no Instagram e Facebook para gerar desejo.</p>
+            </div>
+            <div class="bg-card p-8 rounded-3xl border border-white/5 hover:border-accent/30 transition-all reveal">
+                <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-2xl mb-6">
+                    <i class="fas fa-filter"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-4">Funis de Vendas</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">Criação de jornadas que transformam desconhecidos em clientes fiéis.</p>
+            </div>
+            <div class="bg-card p-8 rounded-3xl border border-white/5 hover:border-accent/30 transition-all reveal">
+                <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-2xl mb-6">
+                    <i class="fas fa-magnifying-glass-chart"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-4">Data Analytics</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">Decisões baseadas em números reais, não em achismos ou palpites.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / CTA -->
+    <footer id="contact" class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-4xl mx-auto glass p-10 md:p-16 rounded-[40px] text-center relative overflow-hidden reveal">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary-600/10 blur-[80px] rounded-full"></div>
+            <h2 class="font-heading text-3xl md:text-5xl font-extrabold mb-6">Pronto para o Próximo Nível?</h2>
+            <p class="text-gray-400 mb-10 text-lg">Vagas limitadas para consultoria estratégica mensal. Aplique agora para verificar disponibilidade.</p>
+            <a href="https://wa.me/5545998258711" class="inline-block px-10 py-5 bg-gradient-to-r from-primary-600 to-accent hover:from-primary-500 hover:to-accent/80 rounded-full font-extrabold text-xl transition-all shadow-2xl shadow-primary-900/20">
+                FALAR COM THAIRON
+            </a>
+            
+            <div class="mt-12 flex justify-center gap-6 text-2xl opacity-50">
+                <a href="https://www.instagram.com/thairondomingos/" class="hover:text-primary-500 transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-primary-500 transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-primary-500 transition-colors"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        
+        <p class="text-center mt-20 text-gray-600 text-sm">
+            &copy; 2026 Thairon Domingos. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <script>
+        // Reveal animations
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(reveal => observer.observe(reveal));
+    </script>
+</body>
+</html>

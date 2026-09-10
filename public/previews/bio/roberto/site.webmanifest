@@ -1,0 +1,14 @@
+{
+  "name": "Roberto da Rosa — Tatuador",
+  "short_name": "R. da Rosa",
+  "description": "Tatuador especialista em Preto e Cinza e Realismo em Capão da Canoa/RS. Fechamentos, reformas e coberturas. Agende pelo WhatsApp.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0F0F12",
+  "theme_color": "#0F0F12",
+  "icons": [
+    { "src": "/assets/img/roberto-avatar.jpg", "sizes": "1080x1080", "type": "image/jpeg" }
+  ]
+}

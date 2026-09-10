@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{name}} — Corretor(a) RE/MAX VIP I | Litoral Norte/RS</title>
+<meta name="description" content="{{name}}, {{role}} na RE/MAX VIP I. Fale pelo WhatsApp e conheça os imóveis disponíveis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<main class="shell">
+  <div class="hero reveal">
+    <img class="logo-pin" src="/assets/img/logo-pin.png" alt="">
+    <span class="avatar" {{avatarStyle}}>{{initials}}</span>
+    <p class="eyebrow">{{role}}</p>
+    <h1 class="name">{{name}}</h1>
+    <p class="role">RE/MAX VIP I · {{location}}</p>
+  </div>
+
+  <a class="btn-wa reveal" href="{{waLink}}" target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+
+  <nav aria-label="Links" style="width:100%">
+    {{#each links}}
+    <a class="link-card reveal" href="{{url}}" target="_blank" rel="noopener">
+      <span>{{icon}} {{label}}</span><span>›</span>
+    </a>
+    {{/each}}
+  </nav>
+
+  <footer class="footer">
+    <p>{{creciLine}}</p>
+  </footer>
+</main>
+
+<div class="sticky-cta">
+  <a class="btn-wa" href="{{waLink}}" target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+</div>
+
+<script src="/assets/js/reveal.js"></script>
+</body>
+</html>

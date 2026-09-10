@@ -1,0 +1,21 @@
+COZY HOME - SITE LINK IN BIO
+============================
+
+Arquivo único: index.html. Basta hospedar (Vercel, Netlify, Cloudflare Pages, ou a mesma hospedagem do bio.jpstudio.tech).
+
+Antes de publicar, ajustar no index.html:
+1. Logo real: salvar como logo-cozy-home.png na mesma pasta e, no CSS, trocar
+   ".monogram img{display:none}" por "display:block" e ".monogram span" para "display:none".
+2. Pixel da Meta: trocar 'SEU_PIXEL_ID' pelo ID numérico do pixel da conta de anúncios.
+   Eventos já configurados: PageView, Contact (clique no WhatsApp) e LinkClick (demais botões).
+3. Domínio: trocar https://cozyhome.example.com/ no <link rel="canonical"> e no JSON-LD.
+4. Guia Cama: hoje aponta para o perfil do Instagram. Trocar pelo link do destaque
+   (abrir o destaque no Instagram web e copiar a URL /stories/highlights/...).
+5. Opcional: imagem og.jpg 1200x630 para o preview ao compartilhar no WhatsApp.
+
+O que já está pronto:
+- SEO local: título, descrição e dados estruturados (schema.org HomeGoodsStore) com nome,
+  endereço, telefone e Instagram. É o que faz o Google reconhecer a loja.
+- WhatsApp com mensagem pré-preenchida (51 99124-8774).
+- "Como chegar" abre o Google Maps no endereço da loja.
+- Responsivo, fontes Google (Cormorant Garamond, Hanken Grotesk, Space Mono), animação de entrada suave.

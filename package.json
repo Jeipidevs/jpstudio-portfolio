@@ -1,0 +1,20 @@
+{
+  "name": "jpstudio-portfolio",
+  "version": "1.0.0",
+  "description": "Hub Oficial de Ativos Digitais & SaaS White Label - JPStudio (portfolio.jpstudio.tech)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "bundle": "node bundle-previews.js"
+  },
+  "keywords": [
+    "portfolio",
+    "saas",
+    "white-label",
+    "n8n",
+    "automation",
+    "jpstudio"
+  ],
+  "author": "João Pedro Schmitz",
+  "license": "MIT"
+}

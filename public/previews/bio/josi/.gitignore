@@ -1,0 +1,5 @@
+.DS_Store
+Thumbs.db
+work/
+*.psd
+node_modules/

@@ -1,0 +1,13 @@
+{
+  "name": "Josi Menezes · Corretora RE/MAX VIP",
+  "short_name": "Josi Menezes",
+  "description": "Imóveis em Capão da Canoa com a corretora Josi Menezes — RE/MAX VIP.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eef1f6",
+  "theme_color": "#003DA5",
+  "icons": [
+    { "src": "assets/favicon-64.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

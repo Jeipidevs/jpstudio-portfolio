@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>RecrutaIA OS — Painel Operacional & IA de Triagem 24/7</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #090d16;
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      width: 1280px;
+      height: 800px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .topbar {
+      height: 64px;
+      background: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    }
+    .brand h1 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .brand span {
+      color: #10b981;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(16, 185, 129, 0.15);
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-left: 8px;
+    }
+    .topbar-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .meta-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .meta-tag .dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr 380px;
+      flex: 1;
+      gap: 16px;
+      padding: 16px 24px;
+      background: #090d16;
+    }
+    .panel {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .panel-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid #1e293b;
+      font-size: 13px;
+      font-weight: 600;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .stat-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 14px 18px;
+    }
+    .stat-card {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 12px;
+      border: 1px solid #334155;
+    }
+    .stat-val {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .stat-lbl {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+    .candidate-list {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow-y: auto;
+    }
+    .candidate-item {
+      padding: 10px 12px;
+      background: #1e293b;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .candidate-item.active {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.08);
+    }
+    .c-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #f8fafc;
+    }
+    .c-info {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .tier-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 6px;
+    }
+    .tier-aa {
+      background: rgba(234, 179, 8, 0.2);
+      color: #facc15;
+      border: 1px solid rgba(234, 179, 8, 0.4);
+    }
+    .tier-a {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+    .chat-view {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .chat-header {
+      padding: 12px 18px;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #334155;
+    }
+    .chat-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #3b82f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .messages {
+      flex: 1;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #0b1120;
+    }
+    .msg {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .msg.bot {
+      background: #1e293b;
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+      border: 1px solid #334155;
+      color: #e2e8f0;
+    }
+    .msg.user {
+      background: #065f46;
+      color: #ecfdf5;
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+    .msg-time {
+      font-size: 10px;
+      opacity: 0.6;
+      margin-top: 4px;
+      text-align: right;
+    }
+    .dossier-panel {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 13px;
+    }
+    .dossier-card {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid #334155;
+    }
+    .score-circle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .score-val {
+      font-size: 32px;
+      font-weight: 800;
+      color: #10b981;
+    }
+    .score-lbl {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #334155;
+      color: #cbd5e1;
+      display: inline-block;
+      margin: 2px;
+    }
+    .pill.green {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .btn-zap {
+      background: #25d366;
+      color: #0b1120;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-icon">🤖</div>
+      <h1>RecrutaIA OS</h1>
+      <span>AI Triagem 24/7</span>
+    </div>
+    <div class="topbar-meta">
+      <div class="meta-tag"><div class="dot"></div> Engine: Claude Sonnet 3.5</div>
+      <div class="meta-tag"><div class="dot"></div> Meta Cloud API WhatsApp: Conectado</div>
+      <div class="meta-tag"><div class="dot"></div> CAPI Leads: Ativo</div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <div class="panel">
+      <div class="panel-header">
+        <span>Candidatos Recentes</span>
+        <span style="color:#10b981">64 Hoje</span>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-val">12</div>
+          <div class="stat-lbl">Tier AA & A</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">94%</div>
+          <div class="stat-lbl">Acurácia IA</div>
+        </div>
+      </div>
+      <div class="candidate-list">
+        <div class="candidate-item active">
+          <div>
+            <div class="c-name">Lucas Mendonça</div>
+            <div class="c-info">Capão da Canoa · Comercial</div>
+          </div>
+          <span class="tier-badge tier-aa">TIER AA</span>
+        </div>
+        <div class="candidate-item">
+          <div>
+            <div class="c-name">Mariana Silveira</div>
+            <div class="c-info">Torres · Imobiliário</div>
+          </div>
+          <span class="tier-badge tier-a">TIER A</span>
+        </div>
+        <div class="candidate-item">
+          <div>
+            <div class="c-name">Gabriel Ramos</div>
+            <div class="c-info">Xangri-lá · Vendas</div>
+          </div>
+          <span class="tier-badge tier-a">TIER A</span>
+        </div>
+        <div class="candidate-item">
+          <div>
+            <div class="c-name">Carla Fontoura</div>
+            <div class="c-info">Osório · Atendimento</div>
+          </div>
+          <span class="tier-badge" style="background:#334155;color:#94a3b8">TIER B</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="chat-header">
+        <div class="chat-user">
+          <div class="chat-avatar">LM</div>
+          <div>
+            <div style="font-weight:700;font-size:14px">Lucas Mendonça (+55 51 99882-1044)</div>
+            <div style="font-size:11px;color:#10b981">Triagem em Tempo Real via WhatsApp</div>
+          </div>
+        </div>
+        <span class="tier-badge tier-aa">RECOMENDADO PARA ENTREVISTA</span>
+      </div>
+      <div class="messages">
+        <div class="msg bot">
+          Olá Lucas! Aqui é a Sofia da VIP Imóveis. Vi que você se interessou pela nossa oportunidade de Consultor Comercial. Você mora na região de Capão da Canoa atualmente?
+          <div class="msg-time">14:22</div>
+        </div>
+        <div class="msg user">
+          Olá Sofia! Moro em Capão da Canoa há 4 anos. Já trabalho com vendas consultivas no setor de automação e tenho veículo próprio.
+          <div class="msg-time">14:23</div>
+        </div>
+        <div class="msg bot">
+          Excelente, Lucas! Mobilidade e experiência consultiva são muito valorizados aqui. O que mais te motivou a buscar uma transição para o mercado de imóveis de alto padrão agora?
+          <div class="msg-time">14:23</div>
+        </div>
+        <div class="msg user">
+          Busco um ambiente de alta remuneração por performance e meritocracia. Sei lidar com negociações longas e clientes exigentes, quero construir carteira sólida.
+          <div class="msg-time">14:25</div>
+        </div>
+        <div class="msg bot">
+          Perfeito, essa mentalidade de dono é exatamente o que nosso Diretor valoriza! Analisei seu perfil e você foi aprovado para a etapa de alinhamento com nossa liderança. Posso agendar sua conversa para amanhã às 15h?
+          <div class="msg-time">14:26</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <span>Dossiê da IA (PydanticAI)</span>
+        <span style="color:#facc15">Tier AA</span>
+      </div>
+      <div class="dossier-panel">
+        <div class="dossier-card">
+          <div class="score-circle">
+            <div>
+              <div class="score-val">96/100</div>
+              <div class="score-lbl">Score de Fit Cultural & Vendas</div>
+            </div>
+            <div style="font-size:32px">🏆</div>
+          </div>
+          <div style="margin-top:8px">
+            <span class="pill green">✓ Perfil Empreendedor</span>
+            <span class="pill green">✓ Alta Comunicabilidade</span>
+            <span class="pill green">✓ Reside na Região</span>
+            <span class="pill green">✓ Veículo Próprio</span>
+            <span class="pill green">✓ Foco em Meritocracia</span>
+          </div>
+        </div>
+
+        <div class="dossier-card">
+          <div style="font-weight:700;margin-bottom:6px;font-size:12px;color:#94a3b8">SÍNTESE PARA O DIRETOR</div>
+          <p style="font-size:12px;line-height:1.5;color:#e2e8f0">
+            Candidato de perfil maduro, articulação excelente, ambição clara por comissões elevadas e vivência comercial. Sem vícios de mercado.
+          </p>
+          <div class="btn-zap">
+            <span>📲 Abrir WhatsApp do Candidato</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

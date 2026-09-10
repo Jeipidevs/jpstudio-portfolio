@@ -1,0 +1,15 @@
+{
+  "name": "Henrique Orsato — Massoterapeuta",
+  "short_name": "H. Orsato",
+  "description": "Massoterapeuta oficial da FGBT. Massagem terapêutica, liberação miofascial, drenagem e mais. Agende pelo WhatsApp.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F5F0E8",
+  "theme_color": "#1A5C42",
+  "icons": [
+    { "src": "/assets/img/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,22 @@
+# Dependências / build
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# Ambiente e credenciais
+.env
+.env.*
+!.env.example
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+*.log
+
+# Python (caso haja scripts auxiliares)
+__pycache__/
+*.pyc
+.venv/
+venv/

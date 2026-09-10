@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f1117" />
+  <title>Calculadora de Aluguel Proporcional</title>
+  <meta name="description" content="Calcule o valor proporcional de aluguel com base na data de entrada e na data de pagamento." />
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #181b25;
+      --card-2: #1f2330;
+      --border: #2a2f40;
+      --text: #eef0f6;
+      --muted: #8b93a7;
+      --accent: #4f7cff;
+      --accent-2: #7c5cff;
+      --success: #34d399;
+      --radius: 16px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 16px calc(24px + env(safe-area-inset-bottom));
+    }
+    .container { width: 100%; max-width: 440px; }
+
+    header { text-align: center; margin-bottom: 24px; padding-top: 8px; }
+    .logo {
+      width: 56px; height: 56px; margin: 0 auto 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 8px 24px rgba(79, 124, 255, .35);
+    }
+    h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.02em; }
+    header p { color: var(--muted); font-size: .875rem; margin-top: 4px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .field { margin-bottom: 18px; }
+    .field:last-of-type { margin-bottom: 0; }
+    label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 8px;
+    }
+    .input-wrap { position: relative; }
+    .prefix {
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      color: var(--muted); font-weight: 600; pointer-events: none;
+    }
+    input {
+      width: 100%;
+      background: var(--card-2);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 1.05rem;
+      font-family: inherit;
+      padding: 14px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    input[type="date"] { color-scheme: dark; min-height: 52px; }
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(79, 124, 255, .18);
+    }
+    #valor { padding-left: 46px; font-weight: 600; font-size: 1.15rem; }
+
+    .toggle {
+      display: flex;
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 4px;
+      margin-top: 18px;
+    }
+    .toggle button {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: .82rem;
+      font-weight: 600;
+      padding: 10px 6px;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .toggle button.active {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(79, 124, 255, .4);
+    }
+    .hint { font-size: .75rem; color: var(--muted); margin-top: 8px; text-align: center; }
+
+    .result {
+      margin-top: 16px;
+      background: linear-gradient(160deg, var(--card), var(--card-2));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .3s, transform .3s;
+      pointer-events: none;
+      height: 0;
+      overflow: hidden;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+      border-width: 0;
+    }
+    .result.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      height: auto;
+      padding: 22px 20px;
+      margin-top: 16px;
+      border-width: 1px;
+    }
+    .result-label { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .result-value {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      color: var(--success);
+      margin: 6px 0 14px;
+      word-break: break-word;
+    }
+    .breakdown {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      text-align: left;
+    }
+    .breakdown div {
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .breakdown span { display: block; font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .breakdown strong { font-size: .95rem; font-weight: 700; }
+
+    .error {
+      display: none;
+      margin-top: 14px;
+      background: rgba(239, 68, 68, .1);
+      border: 1px solid rgba(239, 68, 68, .35);
+      color: #fca5a5;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: .85rem;
+      text-align: center;
+    }
+    .error.show { display: block; }
+
+    .btn-copy {
+      margin-top: 14px;
+      width: 100%;
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-copy:active { background: var(--border); }
+
+    footer { margin-top: auto; padding-top: 28px; color: var(--muted); font-size: .75rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">🏠</div>
+      <h1>Aluguel Proporcional</h1>
+      <p>Calcule quanto o inquilino paga pelos dias ocupados</p>
+    </header>
+
+    <div class="card">
+      <div class="field">
+        <label for="valor">Valor mensal do aluguel</label>
+        <div class="input-wrap">
+          <span class="prefix">R$</span>
+          <input type="text" id="valor" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="entrada">Data de entrada do inquilino</label>
+        <input type="date" id="entrada" />
+      </div>
+
+      <div class="field">
+        <label for="pagamento">Data do pagamento (vencimento)</label>
+        <input type="date" id="pagamento" />
+      </div>
+
+      <div class="toggle" role="group" aria-label="Base de cálculo da diária">
+        <button type="button" id="modo-mes" class="active">Dias do mês</button>
+        <button type="button" id="modo-30">Mês comercial (30 dias)</button>
+      </div>
+      <p class="hint" id="hint-modo">Diária = aluguel ÷ dias reais do mês de entrada</p>
+    </div>
+
+    <div class="error" id="erro"></div>
+
+    <div class="result" id="resultado">
+      <div class="result-label">Valor proporcional a pagar</div>
+      <div class="result-value" id="valor-final">R$ 0,00</div>
+      <div class="breakdown">
+        <div><span>Dias ocupados</span><strong id="bk-dias">—</strong></div>
+        <div><span>Valor da diária</span><strong id="bk-diaria">—</strong></div>
+        <div><span>Período</span><strong id="bk-periodo">—</strong></div>
+        <div><span>Base de cálculo</span><strong id="bk-base">—</strong></div>
+      </div>
+      <button type="button" class="btn-copy" id="copiar">📋 Copiar resumo</button>
+    </div>
+
+    <footer>Cálculo: diária × dias entre a entrada (inclusive) e o pagamento (exclusive)</footer>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const fmtBRL = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const fmtData = (d) => d.toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+
+    let modo30 = false;
+    let ultimoResumo = '';
+
+    // máscara de moeda
+    $('valor').addEventListener('input', (e) => {
+      let digits = e.target.value.replace(/\D/g, '');
+      if (!digits) { e.target.value = ''; calcular(); return; }
+      const num = parseInt(digits, 10) / 100;
+      e.target.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      calcular();
+    });
+
+    $('entrada').addEventListener('change', calcular);
+    $('pagamento').addEventListener('change', calcular);
+
+    $('modo-mes').addEventListener('click', () => setModo(false));
+    $('modo-30').addEventListener('click', () => setModo(true));
+
+    function setModo(v) {
+      modo30 = v;
+      $('modo-mes').classList.toggle('active', !v);
+      $('modo-30').classList.toggle('active', v);
+      $('hint-modo').textContent = v
+        ? 'Diária = aluguel ÷ 30 (mês comercial)'
+        : 'Diária = aluguel ÷ dias reais do mês de entrada';
+      calcular();
+    }
+
+    function parseValor() {
+      const raw = $('valor').value.replace(/\./g, '').replace(',', '.');
+      const n = parseFloat(raw);
+      return isNaN(n) ? 0 : n;
+    }
+
+    function mostrarErro(msg) {
+      const el = $('erro');
+      if (msg) { el.textContent = msg; el.classList.add('show'); }
+      else { el.classList.remove('show'); }
+      $('resultado').classList.remove('show');
+    }
+
+    function calcular() {
+      const valor = parseValor();
+      const entradaStr = $('entrada').value;
+      const pagamentoStr = $('pagamento').value;
+
+      if (!valor || !entradaStr || !pagamentoStr) { mostrarErro(''); return; }
+
+      const entrada = new Date(entradaStr + 'T00:00:00Z');
+      const pagamento = new Date(pagamentoStr + 'T00:00:00Z');
+
+      if (pagamento <= entrada) {
+        mostrarErro('A data de pagamento precisa ser depois da data de entrada.');
+        return;
+      }
+
+      const dias = Math.round((pagamento - entrada) / 86400000);
+      const diasNoMes = new Date(Date.UTC(entrada.getUTCFullYear(), entrada.getUTCMonth() + 1, 0)).getUTCDate();
+      const base = modo30 ? 30 : diasNoMes;
+      const diaria = valor / base;
+      const total = diaria * dias;
+
+      mostrarErro('');
+      $('valor-final').textContent = fmtBRL(total);
+      $('bk-dias').textContent = dias + (dias === 1 ? ' dia' : ' dias');
+      $('bk-diaria').textContent = fmtBRL(diaria);
+      $('bk-periodo').textContent = fmtData(entrada) + ' → ' + fmtData(pagamento);
+      $('bk-base').textContent = '÷ ' + base + ' dias';
+      $('resultado').classList.add('show');
+
+      ultimoResumo =
+        'Aluguel proporcional\n' +
+        '• Aluguel mensal: ' + fmtBRL(valor) + '\n' +
+        '• Entrada: ' + fmtData(entrada) + '\n' +
+        '• Pagamento: ' + fmtData(pagamento) + '\n' +
+        '• Dias ocupados: ' + dias + '\n' +
+        '• Diária (aluguel ÷ ' + base + '): ' + fmtBRL(diaria) + '\n' +
+        '• TOTAL PROPORCIONAL: ' + fmtBRL(total);
+    }
+
+    $('copiar').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(ultimoResumo);
+        $('copiar').textContent = '✅ Copiado!';
+      } catch {
+        $('copiar').textContent = '❌ Não foi possível copiar';
+      }
+      setTimeout(() => { $('copiar').textContent = '📋 Copiar resumo'; }, 2000);
+    });
+
+    // Default values for instant demonstration
+    $('valor').value = '3.000,00';
+    $('entrada').value = '2026-09-10';
+    $('pagamento').value = '2026-09-30';
+    calcular();
+  </script>
+</body>
+</html>

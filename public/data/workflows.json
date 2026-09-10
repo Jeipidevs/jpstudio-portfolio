@@ -1,0 +1,332 @@
+[
+  {
+    "id": "autocobra-workflow",
+    "name": "AutoCobra Zap - Régua de Cobrança Automática via WhatsApp",
+    "category": "01-cobranca-e-financeiro",
+    "fileName": "autocobra-workflow.json",
+    "nodeCount": 6,
+    "active": false,
+    "updatedAt": null
+  },
+  {
+    "id": "Central de Leads — Capturar Facebook Lead Ads",
+    "name": "Central de Leads — Capturar Facebook Lead Ads",
+    "category": "02-central-de-leads-e-marketing",
+    "fileName": "Central de Leads — Capturar Facebook Lead Ads.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Central de Leads — Notificar Corretor",
+    "name": "Central de Leads — Notificar Corretor",
+    "category": "02-central-de-leads-e-marketing",
+    "fileName": "Central de Leads — Notificar Corretor.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Ecobrisa Soluções — Notificar Lead (WhatsApp)",
+    "name": "Ecobrisa Soluções — Notificar Lead (WhatsApp)",
+    "category": "02-central-de-leads-e-marketing",
+    "fileName": "Ecobrisa Soluções — Notificar Lead (WhatsApp).json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Meta Webhook — Verificação GET",
+    "name": "Meta Webhook — Verificação GET",
+    "category": "02-central-de-leads-e-marketing",
+    "fileName": "Meta Webhook — Verificação GET.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "VipHub — Anúncio Dia 2 no ar",
+    "name": "VipHub — Anúncio Dia 2 no ar",
+    "category": "02-central-de-leads-e-marketing",
+    "fileName": "VipHub — Anúncio Dia 2 no ar.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "zaplead-workflow",
+    "name": "ZapLead 24/7 - Triagem Instantânea e Qualificação de Leads",
+    "category": "02-central-de-leads-e-marketing",
+    "fileName": "zaplead-workflow.json",
+    "nodeCount": 5,
+    "active": false,
+    "updatedAt": null
+  },
+  {
+    "id": "RE-MAX VIP - 00 SETUP- Popular Planilha (RODAR SÓ UMA VEZ)",
+    "name": "RE-MAX VIP - 00 SETUP- Popular Planilha (RODAR SÓ UMA VEZ)",
+    "category": "03-mentor-vip-e-gestao-de-equipe",
+    "fileName": "RE-MAX VIP - 00 SETUP- Popular Planilha (RODAR SÓ UMA VEZ).json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "RE-MAX VIP - 01 Receptor e Análise WhatsApp",
+    "name": "RE-MAX VIP - 01 Receptor e Análise WhatsApp",
+    "category": "03-mentor-vip-e-gestao-de-equipe",
+    "fileName": "RE-MAX VIP - 01 Receptor e Análise WhatsApp.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "RE-MAX VIP - 02 Sábado- Solicitar Atualizações",
+    "name": "RE-MAX VIP - 02 Sábado- Solicitar Atualizações",
+    "category": "03-mentor-vip-e-gestao-de-equipe",
+    "fileName": "RE-MAX VIP - 02 Sábado- Solicitar Atualizações.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "RE-MAX VIP - 03 Segunda- Gerar e Enviar Tabela",
+    "name": "RE-MAX VIP - 03 Segunda- Gerar e Enviar Tabela",
+    "category": "03-mentor-vip-e-gestao-de-equipe",
+    "fileName": "RE-MAX VIP - 03 Segunda- Gerar e Enviar Tabela.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "WhatsApp — Alertas de Follow-up",
+    "name": "WhatsApp — Alertas de Follow-up",
+    "category": "03-mentor-vip-e-gestao-de-equipe",
+    "fileName": "WhatsApp — Alertas de Follow-up.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "WhatsApp — Mentor VIP (Final)",
+    "name": "WhatsApp — Mentor VIP (Final)",
+    "category": "03-mentor-vip-e-gestao-de-equipe",
+    "fileName": "WhatsApp — Mentor VIP (Final).json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "WhatsApp — Mentor VIP — Agenda do Dia",
+    "name": "WhatsApp — Mentor VIP — Agenda do Dia",
+    "category": "03-mentor-vip-e-gestao-de-equipe",
+    "fileName": "WhatsApp — Mentor VIP — Agenda do Dia.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "WhatsApp — Mentor VIP — Meta Batida",
+    "name": "WhatsApp — Mentor VIP — Meta Batida",
+    "category": "03-mentor-vip-e-gestao-de-equipe",
+    "fileName": "WhatsApp — Mentor VIP — Meta Batida.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "WhatsApp — Resumo Diário da Equipe",
+    "name": "WhatsApp — Resumo Diário da Equipe",
+    "category": "03-mentor-vip-e-gestao-de-equipe",
+    "fileName": "WhatsApp — Resumo Diário da Equipe.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "certidoes-orquestrador",
+    "name": "Certidões REMAX VIP — Orquestrador Principal",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "certidoes-orquestrador.json",
+    "nodeCount": 6,
+    "active": false,
+    "updatedAt": null
+  },
+  {
+    "id": "certidoes-rpa-browserless",
+    "name": "Sub-Workflow RPA — Browserless (Dinâmico)",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "certidoes-rpa-browserless.json",
+    "nodeCount": 6,
+    "active": false,
+    "updatedAt": null
+  },
+  {
+    "id": "Certidões REMAX VIP — Orquestrador",
+    "name": "Certidões REMAX VIP — Orquestrador",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "Certidões REMAX VIP — Orquestrador.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Diligência — Enviar link do portal",
+    "name": "Diligência — Enviar link do portal",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "Diligência — Enviar link do portal.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Radar Litoral — Automação Diária de Scraping & Alertas",
+    "name": "Radar Litoral — Automação Diária de Scraping & Alertas",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "Radar Litoral — Automação Diária de Scraping & Alertas.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Radar VIP — Convite Piloto (13-08 07h)",
+    "name": "Radar VIP — Convite Piloto (13-08 07h)",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "Radar VIP — Convite Piloto (13-08 07h).json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Radar VIP — Notificar Varredura Pronta",
+    "name": "Radar VIP — Notificar Varredura Pronta",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "Radar VIP — Notificar Varredura Pronta.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Radar VIP — Scraping Semanal",
+    "name": "Radar VIP — Scraping Semanal",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "Radar VIP — Scraping Semanal.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "radar-litoral-workflow",
+    "name": "Radar Litoral — Automação Diária de Scraping & Alertas",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "radar-litoral-workflow.json",
+    "nodeCount": 6,
+    "active": true,
+    "updatedAt": null
+  },
+  {
+    "id": "VALIDAR ITI — Assinaturas gov.br",
+    "name": "VALIDAR ITI — Assinaturas gov.br",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "VALIDAR ITI — Assinaturas gov.br.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "VIP-OS",
+    "name": "VIP-OS",
+    "category": "04-imobiliario-e-rpa",
+    "fileName": "VIP-OS.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Recrutamento — Acompanhamento Fase 2",
+    "name": "Recrutamento — Acompanhamento Fase 2",
+    "category": "05-recrutamento-e-rh",
+    "fileName": "Recrutamento — Acompanhamento Fase 2.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "Recrutamento — Presencial Lembrete & Resultado",
+    "name": "Recrutamento — Presencial Lembrete & Resultado",
+    "category": "05-recrutamento-e-rh",
+    "fileName": "Recrutamento — Presencial Lembrete & Resultado.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "WhatsApp — Recuperação de Senha",
+    "name": "WhatsApp — Recuperação de Senha",
+    "category": "06-transacionais-e-seguranca",
+    "fileName": "WhatsApp — Recuperação de Senha.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "ali-dropshipping-sync",
+    "name": "Medusa Dropshipping - Supplier Sync & Pricing",
+    "category": "07-ecommerce-e-dropshipping",
+    "fileName": "ali-dropshipping-sync.json",
+    "nodeCount": 3,
+    "active": false,
+    "updatedAt": null
+  },
+  {
+    "id": "medusa-order-to-supplier",
+    "name": "01 - Medusa Novo Pedido -> Fornecedor Dropshipping & Notificacao",
+    "category": "07-ecommerce-e-dropshipping",
+    "fileName": "medusa-order-to-supplier.json",
+    "nodeCount": 4,
+    "active": false,
+    "updatedAt": null
+  },
+  {
+    "id": "order-fulfillment-webhook",
+    "name": "Medusa Dropshipping - Order Fulfillment & Notification",
+    "category": "07-ecommerce-e-dropshipping",
+    "fileName": "order-fulfillment-webhook.json",
+    "nodeCount": 2,
+    "active": false,
+    "updatedAt": null
+  },
+  {
+    "id": "supplier-catalog-sync",
+    "name": "02 - Sincronizacao de Catalogo e Precos Fornecedor (Dropshipping Sync)",
+    "category": "07-ecommerce-e-dropshipping",
+    "fileName": "supplier-catalog-sync.json",
+    "nodeCount": 4,
+    "active": false,
+    "updatedAt": null
+  },
+  {
+    "id": "tracking-fulfillment-update",
+    "name": "03 - Atualizacao de Rastreamento e Fulfillment no Medusa",
+    "category": "07-ecommerce-e-dropshipping",
+    "fileName": "tracking-fulfillment-update.json",
+    "nodeCount": 4,
+    "active": false,
+    "updatedAt": null
+  },
+  {
+    "id": "DEBUG TEMP — Probe helpers.httpRequest (apagar depois)",
+    "name": "DEBUG TEMP — Probe helpers.httpRequest (apagar depois)",
+    "category": "08-laboratorio-e-testes",
+    "fileName": "DEBUG TEMP — Probe helpers.httpRequest (apagar depois).json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "PROBE ITI hosts",
+    "name": "PROBE ITI hosts",
+    "category": "08-laboratorio-e-testes",
+    "fileName": "PROBE ITI hosts.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "TEST ITI arquivo",
+    "name": "TEST ITI arquivo",
+    "category": "08-laboratorio-e-testes",
+    "fileName": "TEST ITI arquivo.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "TEST ITI report",
+    "name": "TEST ITI report",
+    "category": "08-laboratorio-e-testes",
+    "fileName": "TEST ITI report.json",
+    "nodeCount": 0,
+    "active": false
+  },
+  {
+    "id": "VipHub — Anúncio Dia 2 [TESTE João Pedro]",
+    "name": "VipHub — Anúncio Dia 2 [TESTE João Pedro]",
+    "category": "08-laboratorio-e-testes",
+    "fileName": "VipHub — Anúncio Dia 2 [TESTE João Pedro].json",
+    "nodeCount": 0,
+    "active": false
+  }
+]

@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  thairon-bio:
+    build: .
+    container_name: thairon-bio
+    ports:
+      - "8080:80"
+    restart: always

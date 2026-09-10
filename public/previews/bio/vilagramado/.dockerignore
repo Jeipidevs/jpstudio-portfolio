@@ -1,0 +1,8 @@
+.git
+.gitignore
+*.md
+work/
+*.psd
+.DS_Store
+Thumbs.db
+docs/

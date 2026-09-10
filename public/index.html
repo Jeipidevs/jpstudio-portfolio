@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JPStudio — Hub Oficial de Ativos Digitais & SaaS White Label</title>
+  <meta name="description" content="Portfólio comercial e mapa técnico de sistemas SaaS, automações n8n, bio links e landing pages de alta conversão desenvolvidos por João Pedro Schmitz / JPStudio.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/jpeg" href="/assets/jp_avatar.jpg">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="brand">
+      <img src="/assets/jp_avatar.jpg" alt="João Pedro Schmitz" class="avatar" onerror="this.style.display='none'">
+      <div class="brand-info">
+        <h1>JPStudio — Ativos Digitais & SaaS</h1>
+        <span>João Pedro Schmitz • Arquiteto de Software & Engenheiro de IA</span>
+      </div>
+    </div>
+    <div class="status-badge">
+      <div class="pulse-dot"></div>
+      <span>portfolio.jpstudio.tech • OFICIAL</span>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-pill">⚡ Portfólio Comercial & Engenharia de Software</div>
+    <h2>Mapa Geral de <span>Ativos Digitais & SaaS</span></h2>
+    <p>
+      Ecossistema consolidado de plataformas SaaS White Label, esteiras de automação com IA, 
+      páginas de autoridade e soluções prontas para escala e monetização imediata.
+    </p>
+
+    <!-- Metrics Row -->
+    <div class="metrics-row">
+      <div class="metric-card">
+        <div class="metric-number green" id="count-all">...</div>
+        <div class="metric-label">Ativos Catalogados</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number blue" id="count-saas">7</div>
+        <div class="metric-label">SaaS Core & B2B</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number gold" id="count-n8n">40</div>
+        <div class="metric-label">Workflows n8n</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number purple" id="count-biolinks">8</div>
+        <div class="metric-label">BioLinks Pro</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number red" id="count-lp">9</div>
+        <div class="metric-label">Landing Pages</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number green" id="count-calc">2</div>
+        <div class="metric-label">Micro-SaaS & Utilitários</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls: Filter Tabs & Search -->
+  <div class="controls-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="todos">
+          🌐 Todos <span class="filter-count" id="count-btn-all">0</span>
+        </button>
+        <button class="filter-btn" data-filter="saas">
+          🚀 SaaS White Label <span class="filter-count">7</span>
+        </button>
+        <button class="filter-btn" data-filter="n8n">
+          ⚡ Workflows n8n <span class="filter-count">40</span>
+        </button>
+        <button class="filter-btn" data-filter="biolinks">
+          🔗 BioLinks Pro <span class="filter-count">8</span>
+        </button>
+        <button class="filter-btn" data-filter="landingpages">
+          🎨 Landing Pages <span class="filter-count">9</span>
+        </button>
+        <button class="filter-btn" data-filter="calculadoras">
+          🧮 Micro-SaaS <span class="filter-count">2</span>
+        </button>
+      </div>
+
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Buscar por nome, nicho ou stack (ex: WhatsApp, Next.js, Pix)...">
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Grid -->
+  <main class="portfolio-grid" id="portfolio-grid">
+    <!-- Rendered dynamically by app.js -->
+  </main>
+
+  <!-- Interactive Modal Previewer -->
+  <div class="modal-overlay" id="preview-modal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>👁️ Visualização Interativa:</span>
+          <strong id="modal-title-text" style="color: var(--accent-green);">Carregando...</strong>
+        </div>
+        <div class="modal-controls">
+          <button class="view-toggle active" id="toggle-desktop">🖥️ Desktop</button>
+          <button class="view-toggle" id="toggle-mobile">📱 Mobile</button>
+          <button class="close-btn" onclick="closePreview()">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe class="modal-iframe" id="preview-iframe" src="about:blank"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      <strong>JPStudio</strong> © 2026 • Engenharia de Software, IA Aplicada & Soluções Digitais Escaláveis.
+    </p>
+    <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted);">
+      Domínio Oficial: <a href="https://portfolio.jpstudio.tech" style="color: var(--accent-green); text-decoration: none; font-weight: 600;">portfolio.jpstudio.tech</a> • Contato Comercial: <a href="https://wa.me/5551996160105" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">WhatsApp Direto</a>
+    </p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

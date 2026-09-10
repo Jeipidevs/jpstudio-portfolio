@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RE/MAX VIP I — Nossa Equipe | Litoral Norte/RS</title>
+<meta name="description" content="Conheça os corretores da RE/MAX VIP I em Capão da Canoa e Xangri-lá. Fale direto com o corretor pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<main class="shell">
+  <div class="hero reveal">
+    <img class="logo" src="/assets/img/logo-full.png" alt="RE/MAX VIP I">
+    <p class="hub-h">Nossa Equipe</p>
+    <p class="hub-sub">Litoral Norte · Capão da Canoa / Xangri-lá</p>
+  </div>
+
+  <nav aria-label="Corretores">
+    {{#each agents}}
+    <a class="agent-card reveal" href="{{url}}">
+      <span class="ava" {{avatarStyle}}>{{initials}}</span>
+      <span class="tx"><b>{{name}}</b><span>{{creciLine}}</span></span>
+    </a>
+    {{/each}}
+  </nav>
+
+  <footer class="footer">
+    <p>RE/MAX VIP I · Capão da Canoa/RS</p>
+  </footer>
+</main>
+<script src="/assets/js/reveal.js"></script>
+</body>
+</html>

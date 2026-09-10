@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+    <!-- Balloon Icon -->
+    <g transform="translate(10, 10) scale(0.8)">
+        <!-- Red top parts of the balloon -->
+        <path d="M50 10 C30 15, 15 35, 10 55 C25 45, 40 40, 50 40 Z" fill="#E11B22"/>
+        <path d="M54 8 C65 8, 75 8, 86 8 C86 20, 80 32, 70 40 C60 32, 54 20, 54 8 Z" fill="#E11B22"/>
+        <path d="M90 10 C110 15, 125 35, 130 55 C115 45, 100 40, 90 40 Z" fill="#E11B22"/>
+        
+        <!-- White middle bands -->
+        <path d="M10 58 C25 68, 40 70, 50 70 C45 80, 42 90, 40 100 L20 80 C12 70, 10 65, 10 58 Z" fill="#FFFFFF"/>
+        <path d="M54 70 C65 75, 75 75, 86 70 L80 100 L60 100 Z" fill="#FFFFFF"/>
+        <path d="M130 58 C115 68, 100 70, 90 70 C95 80, 98 90, 100 100 L120 80 C128 70, 130 65, 130 58 Z" fill="#FFFFFF"/>
+        
+        <!-- Blue bottom parts -->
+        <path d="M22 83 L40 102 L48 115 L35 115 Z" fill="#0054A4"/>
+        <path d="M58 103 L82 103 L75 115 L65 115 Z" fill="#0054A4"/>
+        <path d="M118 83 L100 102 L92 115 L105 115 Z" fill="#0054A4"/>
+        
+        <!-- Basket -->
+        <rect x="60" y="120" width="20" height="15" fill="#E11B22"/>
+    </g>
+    
+    <!-- Text RE/MAX -->
+    <text x="130" y="70" font-family="Arial, sans-serif" font-weight="900" font-size="64" fill="#FFFFFF" letter-spacing="-2">RE</text>
+    <text x="235" y="70" font-family="Arial, sans-serif" font-weight="900" font-size="64" fill="#0054A4" letter-spacing="-2">/</text>
+    <text x="255" y="70" font-family="Arial, sans-serif" font-weight="900" font-size="64" fill="#FFFFFF" letter-spacing="-2">MAX</text>
+    
+    <!-- Text VIP -->
+    <text x="270" y="105" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#E11B22" letter-spacing="4">VIP</text>
+</svg>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=1.0">
+    <meta name="description" content="Mônaco Grand Marina - Condomínio Náutico de Alto Padrão na Lagoa dos Quadros. Viva a liberdade de navegar desde a sua própria casa.">
+    <meta name="keywords" content="mônaco, grand marina, condomínio náutico, lagoa dos quadros, marina, alto padrão, litoral gaúcho">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://monaco.imobiliariavip.com/">
+    <meta property="og:title" content="Mônaco Grand Marina | Condomínio Náutico de Alto Padrão">
+    <meta property="og:description" content="Condomínio Náutico de Alto Padrão na Lagoa dos Quadros. Viva a liberdade de navegar desde a sua própria casa.">
+    <meta property="og:image" content="https://monaco.imobiliariavip.com/assets/hero_render.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://monaco.imobiliariavip.com/">
+    <meta property="twitter:title" content="Mônaco Grand Marina | Condomínio Náutico de Alto Padrão">
+    <meta property="twitter:description" content="Condomínio Náutico de Alto Padrão na Lagoa dos Quadros. Viva a liberdade de navegar desde a sua própria casa.">
+    <meta property="twitter:image" content="https://monaco.imobiliariavip.com/assets/hero_render.webp">
+
+    <title>Mônaco Grand Marina | Condomínio Náutico de Alto Padrão</title>
+    
+    <!-- SEO Enhancements -->
+    <meta name="author" content="RE/MAX VIP">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://monaco.imobiliariavip.com/">
+    
+    <!-- Open Graph Content -->
+    <meta property="og:site_name" content="Mônaco Grand Marina">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Links de Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css?v=1.1">
+    
+
+</head>
+<body class="bg-dark text-pearl">
+    
+    <!-- Navigation -->
+    <nav class="nav-sticky">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="assets/logo_monaco_white.png" alt="Mônaco Grand Marina" class="h-[34px] md:h-[55px]" width="144" height="55">
+            </div>
+            <div class="hidden lg:flex space-x-8">
+                <a href="#conceito" class="text-white hover:text-yellow-400 transition font-medium">Conceito</a>
+                <a href="#estrutura" class="text-white hover:text-yellow-400 transition font-medium">Estrutura</a>
+                <a href="#implantacao" class="text-white hover:text-yellow-400 transition font-medium">Implantação</a>
+                <a href="#galeria" class="text-white hover:text-yellow-400 transition font-medium">Galeria</a>
+                <a href="#contato" class="text-white hover:text-yellow-400 transition font-medium">Contato</a>
+            </div>
+            <button onclick="openWhatsApp()" class="btn-gold text-white px-6 py-2 rounded-full font-semibold" aria-label="Falar conosco via WhatsApp">
+                Fale Conosco
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <picture>
+                <source srcset="assets/pool_view.webp" type="image/webp">
+                <img src="assets/pool_view.jpg" alt="Mônaco Grand Marina - Vista relaxante da piscina de borda infinita com vista para a lagoa" class="w-full h-full object-cover" fetchpriority="high" width="1920" height="1080">
+            </picture>
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <div class="hero-content relative z-10 text-center text-white px-4" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gradient">
+                MÔNACO GRAND MARINA
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-light mb-4">
+                Condomínio Náutico de Alto Padrão
+            </h2>
+            <p class="text-xl md:text-2xl mb-2 text-yellow-400">
+                Lagoa dos Quadros
+            </p>
+            <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">
+                Viva a liberdade de navegar desde a sua própria casa
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="scrollToForm()" class="btn-gold text-white px-8 py-4 rounded-full text-lg font-semibold">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Quero Receber Informações
+                </button>
+                <div class="flex gap-2">
+                    <button onclick="openWhatsApp()" class="btn-outline-gold px-6 py-4 rounded-full text-lg font-semibold" aria-label="Agendar visita pelo WhatsApp">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Agendar Visita
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#conceito" class="text-white text-4xl" title="Rolar para baixo">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Conceito -->
+    <section id="conceito" class="py-32 bg-charcoal">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <picture>
+                        <source srcset="assets/pool_sunset.webp" type="image/webp">
+                        <img src="assets/pool_sunset.jpg" alt="Pôr do sol deslumbrante na piscina do Mônaco Grand Marina - O conceito definitivo de luxo e liberdade" class="rounded-lg shadow-2xl w-full h-auto" loading="lazy" width="800" height="600" decoding="async">
+                    </picture>
+                </div>
+                <div data-aos="fade-left">
+                    <h1 class="text-5xl md:text-8xl font-bold mb-6 text-white leading-tight">
+                        Liberdade para <br>
+                        <span class="text-gradient">ir além.</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed font-light text-justify">
+                        Um refúgio de altíssimo padrão com marina particular e acesso anexo ao D1 Fly (Aeródromo Privado).
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed text-justify">
+                        Localizado na Lagoa dos Quadros, com acesso por terra, água e ar, o empreendimento integra natureza, mobilidade e sofisticação em um cenário único no litoral gaúcho.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed text-yellow-500 font-semibold text-justify">
+                        Um projeto magistralmente concebido para elevar o padrão imobiliário e se tornar o ícone náutico definitivo do litoral.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Náutico -->
+    <section class="py-32 relative parallax" style="background-image: url('assets/clubhouse_pool.webp');">
+        <div class="absolute inset-0 cinematic-overlay"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white" data-aos="fade-up">
+                Lifestyle <span class="text-gradient">Náutico</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lifestyle-grid">
+                <div class="text-center text-white" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#8a6d3b] to-[#f1d592] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg transform hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-water text-3xl text-black" style="color: black !important;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Canais Navegáveis</h3>
+                    <p class="text-gray-300 font-light">12 hectares de lagos navegáveis</p>
+                </div>
+                
+                <div class="text-center text-white" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#8a6d3b] to-[#f1d592] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg transform hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-anchor text-3xl text-black" style="color: black !important;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Marina Exclusiva</h3>
+                    <p class="text-gray-300 font-light">Infraestrutura de alto padrão e atracação segura para a sua embarcação.</p>
+                </div>
+                
+                <div class="text-center text-white" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#8a6d3b] to-[#f1d592] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg transform hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-ship text-3xl text-black" style="color: black !important;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Píer Privativo</h3>
+                    <p class="text-gray-300 font-light">Atracadouro exclusivo nos lotes</p>
+                </div>
+                
+                <div class="text-center text-white" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#8a6d3b] to-[#f1d592] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg transform hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-compass text-3xl text-black" style="color: black !important;"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Acesso à Lagoa</h3>
+                    <p class="text-gray-300 font-light">Conexão direta com a Lagoa dos Quadros</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section id="estrutura" class="py-32 bg-navy">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16" data-aos="fade-up">
+                Estrutura <span class="text-gradient">Completa</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-yellow-500 text-5xl mb-4">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Clube da Marina</h3>
+                    <p class="text-gray-400">Espaço exclusivo para confraternização</p>
+                </div>
+                
+                <div class="glass-card card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-yellow-500 text-5xl mb-4">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Academia</h3>
+                    <p class="text-gray-400">Mais de 500m² com equipamentos modernos e vista panorâmica</p>
+                </div>
+                
+                <div class="glass-card card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-yellow-500 text-5xl mb-4">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Garagem Náutica</h3>
+                    <p class="text-gray-400">A mais moderna do Brasil</p>
+                </div>
+                
+                <div class="glass-card card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-yellow-500 text-5xl mb-4">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Salão de Eventos</h3>
+                    <p class="text-gray-400">Capacidade para 360 pessoas</p>
+                </div>
+                
+                <div class="glass-card card-hover" data-aos-delay="500" data-aos="fade-up">
+                    <div class="mb-4 text-5xl text-yellow-500">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="mb-2 font-bold text-xl">Piscina com Borda Infinita</h3>
+                    <p class="text-gray-400">Borda infinita de 65 metros de comprimento com vista paradisíaca para a Lagoa dos Quadros</p>
+                </div>
+                
+                <div class="glass-card card-hover" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-yellow-500 text-5xl mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Restaurante</h3>
+                    <p class="text-gray-400">Gastronomia de alto padrão no local</p>
+                </div>
+                
+                <div class="glass-card card-hover" data-aos="fade-up" data-aos-delay="700">
+                    <div class="text-yellow-500 text-5xl mb-4">
+                        <i class="fas fa-table-tennis"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Beach Tennis</h3>
+                    <p class="text-gray-400">Quadras exclusivas para o esporte</p>
+                </div>
+                
+                <div class="glass-card card-hover" data-aos="fade-up" data-aos-delay="800">
+                    <div class="text-yellow-500 text-5xl mb-4">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Parque da Orla</h3>
+                    <p class="text-gray-400">Área verde preservada e contemplação</p>
+                </div>
+                
+                <div class="glass-card card-hover" data-aos="fade-up" data-aos-delay="900">
+                    <div class="text-yellow-500 text-5xl mb-4">
+                        <i class="fas fa-helicopter"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Anexo ao D1 Fly</h3>
+                    <p class="text-gray-400">Aeródromo privado com total conveniência e acesso pelo ar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implantação -->
+    <section id="implantacao" class="py-32 bg-charcoal">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-8" data-aos="fade-up">
+                Implantação do <span class="text-gradient">Condomínio</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-4 gap-8 mb-12" data-aos="fade-up">
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-yellow-500 mb-2">367</div>
+                    <p class="text-gray-400">Lotes Exclusivos</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-yellow-500 mb-2">1.345m²</div>
+                    <p class="text-gray-400">Lotes de até</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-yellow-500 mb-2">320%</div>
+                    <p class="text-gray-400">Potencial de ROI</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-yellow-500 mb-2">37%</div>
+                    <p class="text-gray-400">Baixa Ocupação (Privacidade)</p>
+                </div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto" data-aos="fade-up">
+                <picture>
+                    <source srcset="assets/marina_day.webp" type="image/webp">
+                    <img src="assets/marina_day.jpg" alt="Mapa de implantação detalhado do condomínio Mônaco Grand Marina" class="w-full rounded-lg shadow-2xl cursor-pointer" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+                </picture>
+                <p class="text-center text-gray-400 mt-4 italic">Clique na imagem para ampliar o mapa de implantação</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" class="py-32 bg-navy">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16" data-aos="fade-up">
+                Galeria de <span class="text-gradient">Exclusividade</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-lg shadow-lg cursor-pointer card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <picture>
+                        <source srcset="assets/clubhouse_facade.webp" type="image/webp">
+                        <img src="assets/clubhouse_facade.jpg" alt="Fachada imponente do Club House" class="w-full h-64 object-cover" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+                    </picture>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg cursor-pointer card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <picture>
+                        <source srcset="assets/marina_night.webp" type="image/webp">
+                        <img src="assets/marina_night.jpg" alt="Marina iluminada durante a noite" class="w-full h-64 object-cover" loading="lazy" decoding="async" onclick="openLightbox(this.src)" width="600" height="400">
+                    </picture>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg cursor-pointer card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <picture>
+                        <source srcset="assets/pool_sunset.webp" type="image/webp">
+                        <img src="assets/pool_sunset.jpg" alt="Pôr do sol cinematográfico visto da piscina" class="w-full h-64 object-cover" loading="lazy" decoding="async" onclick="openLightbox(this.src)" width="600" height="400">
+                    </picture>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg cursor-pointer card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <picture>
+                        <source srcset="assets/clubhouse_pool.webp" type="image/webp">
+                        <img src="assets/clubhouse_pool.jpg" alt="Área de lazer interna e boliche no Club House" class="w-full h-64 object-cover" loading="lazy" decoding="async" onclick="openLightbox(this.src)" width="600" height="400">
+                    </picture>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg cursor-pointer card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <picture>
+                        <source srcset="assets/luxury_houses.webp" type="image/webp">
+                        <img src="assets/luxury_houses.jpg" alt="Casas de luxo integradas aos canais" class="w-full h-64 object-cover" loading="lazy" decoding="async" onclick="openLightbox(this.src)" width="600" height="400">
+                    </picture>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg cursor-pointer card-hover" data-aos="fade-up" data-aos-delay="600">
+                    <picture>
+                        <source srcset="assets/pool_view.webp" type="image/webp">
+                        <img src="assets/pool_view.jpg" alt="Vista relaxante da área das piscinas" class="w-full h-64 object-cover" loading="lazy" decoding="async" onclick="openLightbox(this.src)" width="600" height="400">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Condições Comerciais -->
+    <section class="py-20 bg-dark text-white border-y border-yellow-500/10">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 flex flex-col items-center justify-center space-y-2" data-aos="fade-up">
+                <span class="text-2xl md:text-3xl tracking-[10px] uppercase opacity-50">Condições</span>
+                <span class="text-gradient">Especiais de Lançamento</span>
+            </h2>
+            <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-8 mb-8 border border-yellow-500/30">
+                    <p class="text-3xl font-bold mb-4">Entrada Facilitada</p>
+                    <p class="text-6xl font-bold text-yellow-400 mb-4">+</p>
+                    <p class="text-3xl font-bold">Saldo em 72 Mensais</p>
+                </div>
+                <button onclick="scrollToForm()" class="btn-gold text-white px-10 py-4 rounded-full text-lg font-semibold w-full md:w-auto">
+                    <i class="fas fa-file-invoice-dollar mr-2"></i>
+                    Solicitar Tabela de Preços
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section id="contato" class="py-20 bg-[#14171c]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-8" data-aos="fade-up">
+                    Receba <span class="text-gradient">Informações</span>
+                </h2>
+                <p class="text-center text-gray-400 mb-12" data-aos="fade-up">
+                    Preencha o formulário e Junior Martins entrará em contato com os detalhes exclusivos.
+                </p>
+                
+                <form id="leadForm" class="space-y-6 flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-full">
+                        <label class="block text-gray-400 mb-2 font-semibold text-center w-full">Nome Completo</label>
+                        <input type="text" id="nome" required placeholder="Seu nome" class="w-full text-center bg-white/5 border border-yellow-500/30 rounded-lg p-3 text-white">
+                    </div>
+                    
+                    <div class="w-full">
+                        <label class="block text-gray-400 mb-2 font-semibold text-center w-full">WhatsApp</label>
+                        <input type="tel" id="telefone" required placeholder="Seu número" class="w-full text-center bg-white/5 border border-yellow-500/30 rounded-lg p-3 text-white">
+                    </div>
+                    
+                    <div class="w-full">
+                        <label class="block text-gray-400 mb-2 font-semibold text-center w-full">E-mail</label>
+                        <input type="email" id="email" required placeholder="seu@email.com" class="w-full text-center bg-white/5 border border-yellow-500/30 rounded-lg p-3 text-white">
+                    </div>
+                    
+                    <div class="w-full">
+                        <label class="block text-gray-400 mb-2 font-semibold text-center w-full">Cidade</label>
+                        <input type="text" id="cidade" required placeholder="Sua cidade" class="w-full text-center bg-white/5 border border-yellow-500/30 rounded-lg p-3 text-white">
+                    </div>
+                    
+                    <button type="submit" class="w-full btn-gold text-white px-8 py-4 rounded-lg text-lg font-semibold">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Receber Apresentação Completa
+                    </button>
+                </form>
+                
+                <div id="successMessage" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg text-center font-bold">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Sua solicitação foi enviada com sucesso!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-16 border-t border-yellow-500/20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12 text-center md:text-left">
+                <div>
+                    <img src="assets/logo_monaco_white.png" alt="Mônaco Grand Marina" class="h-[45px] md:h-[55px] mb-6 mx-auto md:mx-0">
+                    <p class="text-gray-400">O ícone do alto padrão no litoral gaúcho. Onde o luxo encontra a liberdade na imensidão da Lagoa dos Quadros.</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-xl font-bold mb-6 text-yellow-400">Consultoria</h3>
+                    <div class="mb-4 w-full flex justify-center md:justify-start">
+                        <img src="assets/remax_imobiliaria_logo.svg" alt="IMOBILIÁRIA RE/MAX VIP" class="h-[55px] md:h-[89px] w-auto ml-4 md:ml-0" loading="lazy">
+                    </div>
+                    <p class="text-gray-400 mb-2">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        51 9 8594-5354
+                    </p>
+                    <p class="text-gray-400 mb-2">
+                        <i class="fas fa-user-tie mr-2"></i>
+                        Junior Martins
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-yellow-400">Siga-nos</h3>
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <a href="https://wa.me/5551985945354" class="text-2xl hover:text-yellow-400 transition" title="Falar no WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/imobiliariavip/" target="_blank" rel="noopener" class="text-2xl hover:text-yellow-400 transition" title="Seguir no Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Remaxredevip" target="_blank" rel="noopener" class="text-2xl hover:text-yellow-400 transition" title="Ver no Youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Mônaco Grand Marina | RE/MAX VIP. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="absolute top-8 right-8 text-white text-4xl cursor-pointer">&times;</span>
+        <img id="lightboxImg" src="" alt="Imagem ampliada" class="max-w-4xl max-h-[80vh] object-contain rounded-lg">
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5551985945354?text=Olá!%20Quero%20conhecer%20o%20Mônaco%20Grand%20Marina" target="_blank" rel="noopener" class="whatsapp-float" title="WhatsApp" aria-label="Botão flutuante do WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>VIP OS — CRM Imobiliário & Funil Kanban</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      width: 1440px;
+      height: 900px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Topbar */
+    .topbar {
+      height: 60px;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      background: #dc2626;
+      color: white;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+    .brand-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #f1f5f9;
+    }
+    .brand-badge {
+      font-size: 11px;
+      background: rgba(14, 165, 233, 0.15);
+      color: #38bdf8;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+      border: 1px solid rgba(14, 165, 233, 0.3);
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 4px;
+      background: #0f172a;
+      padding: 4px;
+      border-radius: 8px;
+    }
+    .nav-tab {
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #94a3b8;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .nav-tab.active {
+      background: #2563eb;
+      color: white;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #3b82f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    /* Subheader with Metrics */
+    .subheader {
+      background: #1e293b;
+      padding: 12px 24px;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .metrics-group {
+      display: flex;
+      gap: 24px;
+    }
+    .metric-pill {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .metric-pill strong {
+      color: #f8fafc;
+      font-weight: 700;
+    }
+    .metric-pill .green { color: #10b981; }
+    .btn-new-lead {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Kanban Grid */
+    .kanban-board {
+      flex: 1;
+      padding: 16px 24px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      overflow-x: auto;
+      background: #090d16;
+    }
+    .column {
+      background: #1e293b;
+      border-radius: 10px;
+      border: 1px solid #334155;
+      display: flex;
+      flex-direction: column;
+      max-height: 100%;
+    }
+    .column-header {
+      padding: 12px 14px;
+      border-bottom: 2px solid;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .col-title {
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .col-count {
+      font-size: 11px;
+      background: #334155;
+      color: #cbd5e1;
+      padding: 2px 7px;
+      border-radius: 10px;
+    }
+    .col-total {
+      font-size: 11px;
+      color: #94a3b8;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .cards-list {
+      flex: 1;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: auto;
+    }
+    .lead-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .lead-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .lead-prop {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .lead-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: #10b981;
+      margin-bottom: 8px;
+    }
+    .lead-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    .tag {
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #1e293b;
+      color: #cbd5e1;
+      border: 1px solid #334155;
+    }
+    .tag.high {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .tag.vip {
+      background: rgba(234, 179, 8, 0.15);
+      color: #facc15;
+      border-color: rgba(234, 179, 8, 0.3);
+    }
+    .lead-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #1e293b;
+      padding-top: 8px;
+      font-size: 11px;
+      color: #64748b;
+    }
+    .broker {
+      color: #94a3b8;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-logo">RE/MAX VIP</div>
+      <div class="brand-title">VIP OS · CRM Imobiliário</div>
+      <div class="brand-badge">Operação Litoral Norte</div>
+    </div>
+    <div class="nav-tabs">
+      <div class="nav-tab active">Kanban Leads</div>
+      <div class="nav-tab">Imóveis & Carteira</div>
+      <div class="nav-tab">Agenda & Visitas</div>
+      <div class="nav-tab">Roleta de Leads</div>
+      <div class="nav-tab">Dashboard Metas</div>
+    </div>
+    <div class="user-info">
+      <div style="text-align: right;">
+        <div style="font-size: 13px; font-weight: 600;">João Pedro Schmitz</div>
+        <div style="font-size: 11px; color: #10b981;">Administrador Geral</div>
+      </div>
+      <div class="avatar">JP</div>
+    </div>
+  </div>
+
+  <div class="subheader">
+    <div class="metrics-group">
+      <div class="metric-pill">Pipeline Ativo: <strong class="green">R$ 18.450.000</strong></div>
+      <div class="metric-pill">Leads em Atendimento: <strong>56 Leads</strong></div>
+      <div class="metric-pill">Visitas Esta Semana: <strong style="color: #38bdf8;">14 Agendadas</strong></div>
+      <div class="metric-pill">VGV Fechado (Mês): <strong class="green">R$ 4.800.000</strong></div>
+    </div>
+    <button class="btn-new-lead">+ Novo Lead / Cliente</button>
+  </div>
+
+  <div class="kanban-board">
+    <!-- Col 1 -->
+    <div class="column">
+      <div class="column-header" style="border-color: #003DA5;">
+        <div class="col-title">
+          <span>Novos</span>
+          <span class="col-count">8</span>
+        </div>
+        <div class="col-total">R$ 4.2M</div>
+      </div>
+      <div class="cards-list">
+        <div class="lead-card">
+          <div class="lead-title">
+            <span>Eduardo Bittencourt</span>
+            <span style="color:#38bdf8;font-size:10px">Meta Ads</span>
+          </div>
+          <div class="lead-prop">Mônaco Grand Marina · 4 Suítes</div>
+          <div class="lead-val">R$ 2.450.000</div>
+          <div class="lead-tags">
+            <span class="tag vip">VIP</span>
+            <span class="tag high">Urgente</span>
+          </div>
+          <div class="lead-footer">
+            <span class="broker">Josi Menezes</span>
+            <span>Há 20 min</span>
+          </div>
+        </div>
+        <div class="lead-card">
+          <div class="lead-title">
+            <span>Marcela Guimarães</span>
+            <span style="color:#38bdf8;font-size:10px">Site</span>
+          </div>
+          <div class="lead-prop">Sobrado em Condomínio · Xangri-lá</div>
+          <div class="lead-val">R$ 1.800.000</div>
+          <div class="lead-tags"><span class="tag">À Vista</span></div>
+          <div class="lead-footer">
+            <span class="broker">Roberto da Rosa</span>
+            <span>Há 2h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 2 -->
+    <div class="column">
+      <div class="column-header" style="border-color: #0EA5E9;">
+        <div class="col-title">
+          <span>Em Contato</span>
+          <span class="col-count">14</span>
+        </div>
+        <div class="col-total">R$ 7.9M</div>
+      </div>
+      <div class="cards-list">
+        <div class="lead-card">
+          <div class="lead-title">
+            <span>Dr. Renato Silveira</span>
+            <span style="color:#10b981;font-size:10px">WhatsApp</span>
+          </div>
+          <div class="lead-prop">Penthouse Beira Mar · Capão da Canoa</div>
+          <div class="lead-val">R$ 3.800.000</div>
+          <div class="lead-tags">
+            <span class="tag vip">Investidor</span>
+            <span class="tag">Mobiliado</span>
+          </div>
+          <div class="lead-footer">
+            <span class="broker">Vanessa de Melos</span>
+            <span>Hoje 14h</span>
+          </div>
+        </div>
+        <div class="lead-card">
+          <div class="lead-title">
+            <span>Guilherme Fontana</span>
+            <span style="color:#10b981;font-size:10px">WhatsApp</span>
+          </div>
+          <div class="lead-prop">Casa Lago dos Quadros</div>
+          <div class="lead-val">R$ 4.100.000</div>
+          <div class="lead-tags"><span class="tag">Lancha Incluída</span></div>
+          <div class="lead-footer">
+            <span class="broker">Henrique Orsato</span>
+            <span>Ontem</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 3 -->
+    <div class="column">
+      <div class="column-header" style="border-color: #F59E0B;">
+        <div class="col-title">
+          <span>Visita Agendada</span>
+          <span class="col-count">9</span>
+        </div>
+        <div class="col-total">R$ 5.4M</div>
+      </div>
+      <div class="cards-list">
+        <div class="lead-card">
+          <div class="lead-title">
+            <span>Rodrigo Alencar</span>
+            <span style="color:#f59e0b;font-size:10px">Amanhã 15h</span>
+          </div>
+          <div class="lead-prop">Mansão Dubai · Acqualina Beach</div>
+          <div class="lead-val">R$ 5.400.000</div>
+          <div class="lead-tags">
+            <span class="tag vip">High-Ticket</span>
+            <span class="tag high">Visita Confirmada</span>
+          </div>
+          <div class="lead-footer">
+            <span class="broker">Josi Menezes</span>
+            <span>Amanhã 15:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 4 -->
+    <div class="column">
+      <div class="column-header" style="border-color: #8B5CF6;">
+        <div class="col-title">
+          <span>Proposta</span>
+          <span class="col-count">5</span>
+        </div>
+        <div class="col-total">R$ 3.8M</div>
+      </div>
+      <div class="cards-list">
+        <div class="lead-card">
+          <div class="lead-title">
+            <span>Família Zanin</span>
+            <span style="color:#8b5cf6;font-size:10px">Minuta em Análise</span>
+          </div>
+          <div class="lead-prop">Apartamento 3 Suítes · Zona Nova</div>
+          <div class="lead-val">R$ 1.950.000</div>
+          <div class="lead-tags"><span class="tag vip">Dação 30%</span></div>
+          <div class="lead-footer">
+            <span class="broker">Roberto da Rosa</span>
+            <span>Em Diligência</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 5 -->
+    <div class="column">
+      <div class="column-header" style="border-color: #10B981;">
+        <div class="col-title">
+          <span>Fechado</span>
+          <span class="col-count">12</span>
+        </div>
+        <div class="col-total">R$ 8.9M</div>
+      </div>
+      <div class="cards-list">
+        <div class="lead-card" style="border-color: #10b981;">
+          <div class="lead-title">
+            <span>Luciano Vargas</span>
+            <span style="color:#10b981;font-size:10px">Comissão Paga ✓</span>
+          </div>
+          <div class="lead-prop">Residencial Ilhas Gregas · Capão</div>
+          <div class="lead-val">R$ 2.650.000</div>
+          <div class="lead-tags"><span class="tag" style="background:#064e3b;color:#34d399">Escritura Pronta</span></div>
+          <div class="lead-footer">
+            <span class="broker">Josi Menezes</span>
+            <span style="color:#10b981;font-weight:700">Comissão: R$ 159.000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

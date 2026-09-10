@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cozy Home Xangri-lá | Cama, Mesa, Banho e Décor</title>
+  <meta name="description" content="Cozy Home em Xangri-lá, RS: curadoria de cama, mesa, banho e décor com marcas selecionadas e atendimento personalizado no litoral. Fale pelo WhatsApp.">
+  <meta name="theme-color" content="#f4ecdc">
+  <link rel="canonical" href="https://cozyhome.jpstudio.tech/">
+
+  <!-- Open Graph / compartilhamento -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cozy Home Xangri-lá">
+  <meta property="og:description" content="Cama · Mesa · Banho · Décor. Curadoria de marcas selecionadas, atendimento personalizado no litoral.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cozyhome.jpstudio.tech/">
+  <meta property="og:image" content="https://cozyhome.jpstudio.tech/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Ícones (monograma CH — trocar pela logo real quando tiver) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f4ecdc' stroke='%23b8955a' stroke-width='2'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='26' fill='%238a6a33'%3ECH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Preload do LCP (logo) e da fonte de corpo -->
+  <link rel="preload" href="/assets/logo-cozy-home.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Dados estruturados: é isso que faz o Google entender que aqui existe uma loja física -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeGoodsStore",
+    "name": "Cozy Home",
+    "alternateName": "Cozy Home Xangri-lá",
+    "description": "Curadoria de cama, mesa, banho e décor com marcas selecionadas e atendimento personalizado no litoral norte do RS.",
+    "image": "https://cozyhome.jpstudio.tech/og.jpg",
+    "url": "https://cozyhome.jpstudio.tech/",
+    "telephone": "+55-51-99124-8774",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Paraguassú, 1889 - Centro",
+      "addressLocality": "Xangri-lá",
+      "addressRegion": "RS",
+      "postalCode": "95588-000",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://www.instagram.com/cozyhomexangrila/"],
+    "priceRange": "$$"
+  }
+  </script>
+
+  <style>
+    /* Fontes locais — latin subset, variável no Hanken (400–600) */
+    @font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url('/fonts/hanken-grotesk.woff2') format('woff2');}
+    @font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/space-mono-400.woff2') format('woff2');}
+    :root{
+      --cream:#f4ecdc; --cream-2:#fbf7ee; --cream-3:#e9dcc3;
+      --gold:#b8955a; --gold-deep:#8a6a33; --cocoa:#3b2f22; --cocoa-2:#6b5a44; --mute:#7a6549;
+      --wa:#25d366;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{-webkit-text-size-adjust:100%;}
+    body{
+      min-height:100dvh;
+      font-family:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+      color:var(--cocoa);
+      background:var(--cream);
+      background-image:
+        radial-gradient(60% 40% at 50% 0%, rgba(184,149,90,0.16), rgba(184,149,90,0) 70%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.18 0 0 0 0 0.13 0 0 0 0.06 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+      -webkit-font-smoothing:antialiased;
+      display:flex;flex-direction:column;align-items:center;
+      padding:max(28px, env(safe-area-inset-top)) 18px 28px;
+    }
+    main{width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center;}
+    .serif{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;}
+    .mono{font-family:'Space Mono','Courier New',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;}
+
+    /* Marca */
+    .brand{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;margin:12px 0 26px;}
+    .logo{width:min(240px,64vw);height:auto;filter:drop-shadow(0 14px 30px rgba(59,47,34,0.14));}
+    .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+    h1{font-size:30px;font-weight:600;letter-spacing:0.08em;color:var(--cocoa);margin-top:6px;}
+    .tag{color:var(--gold-deep);}
+    .lead{font-size:14.5px;line-height:1.5;color:var(--cocoa-2);max-width:300px;}
+
+    /* Botões */
+    .links{width:100%;display:flex;flex-direction:column;gap:12px;}
+    .btn{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      min-height:54px;padding:14px 18px;border-radius:999px;
+      font-size:15px;font-weight:500;text-decoration:none;text-align:center;
+      color:var(--cocoa);background:rgba(251,247,238,0.7);border:1px solid var(--gold);
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .btn:hover,.btn:focus-visible{transform:translateY(-1px);box-shadow:0 10px 24px rgba(59,47,34,0.12);background:var(--cream-2);outline:none;}
+    .btn:active{transform:translateY(0);}
+    .btn svg{width:18px;height:18px;flex-shrink:0;}
+    .btn.primary{background:var(--cocoa);color:var(--cream);border-color:var(--cocoa);font-weight:600;}
+    .btn.primary:hover{background:#2c2219;}
+    .btn small{display:block;font-size:11.5px;font-weight:400;color:var(--mute);margin-top:2px;}
+    .btn.primary small{color:rgba(244,236,220,0.7);}
+    .btn .txt{display:flex;flex-direction:column;align-items:center;line-height:1.2;}
+
+    /* Curadoria */
+    .curadoria{margin-top:30px;width:100%;text-align:center;}
+    .curadoria .mono{color:var(--gold-deep);margin-bottom:12px;display:block;}
+    .marcas{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+    .marcas span{font-family:'Space Mono','Courier New',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:7px 11px;border:1px solid rgba(184,149,90,0.55);border-radius:2px;color:var(--cocoa-2);}
+
+    /* Endereço */
+    .local{margin-top:28px;text-align:center;font-style:normal;color:var(--cocoa-2);font-size:13.5px;line-height:1.55;}
+    .local strong{display:block;color:var(--cocoa);font-weight:600;}
+
+    footer{margin-top:auto;padding-top:34px;text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center;}
+    footer .mono{color:var(--mute);}
+    footer a{color:var(--mute);text-decoration:none;font-size:11px;}
+    footer a:hover{color:var(--gold-deep);}
+
+    /* Entrada suave */
+    @media (prefers-reduced-motion:no-preference){
+      .reveal{opacity:0;transform:translateY(8px);animation:up .6s ease forwards;}
+      .reveal:nth-child(2){animation-delay:.08s}.reveal:nth-child(3){animation-delay:.14s}
+      .reveal:nth-child(4){animation-delay:.2s}.reveal:nth-child(5){animation-delay:.26s}.reveal:nth-child(6){animation-delay:.32s}
+      @keyframes up{to{opacity:1;transform:none}}
+    }
+    @media (min-width:700px){
+      body{padding-top:56px;}
+      h1{font-size:34px;}
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header class="brand reveal">
+    <h1 class="sr-only">Cozy Home — Cama, Mesa, Banho e Décor em Xangri-lá</h1>
+    <picture>
+      <source srcset="/assets/logo-cozy-home.webp" type="image/webp">
+      <img class="logo" src="/assets/logo-cozy-home.png" width="240" height="240" alt="Cozy Home — Cama, Mesa e Banho" fetchpriority="high">
+    </picture>
+    <p class="lead">Curadoria de marcas selecionadas e atendimento personalizado no litoral norte gaúcho.</p>
+  </header>
+
+  <nav class="links" aria-label="Links da Cozy Home">
+    <a class="btn primary reveal" id="wa" href="https://wa.me/5551991248774?text=Oi!%20Vi%20o%20site%20da%20Cozy%20Home%20e%20quero%20saber%20mais." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.87.51 3.63 1.4 5.13L2 22l4.98-1.36C8.44 21.5 10.17 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.24.66-1.4 1.26-1.93 1.34-.5.08-1.1.11-1.78-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.7-4.1-4.84-4.29-.14-.19-1.16-1.55-1.16-2.95s.73-2.09 1-2.38c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.27 1.65 2.05 1.13 1 2.09 1.32 2.38 1.47.29.15.46.13.63-.07.17-.2.72-.83.91-1.11.19-.29.38-.24.63-.14.26.1 1.63.79 1.91.93.28.14.47.21.53.32.07.12.07.68-.17 1.34z"/></svg>
+      <span class="txt">Falar no WhatsApp<small>Atendimento personalizado</small></span>
+    </a>
+
+    <a class="btn reveal" href="https://www.instagram.com/cozyhomexangrila/" target="_blank" rel="noopener" data-track="GuiaCama"><!-- TODO: trocar pelo link do destaque "Guia Cama" -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M7 10V8h4v2M13 10V8h4v2"/></svg>
+      <span class="txt">Guia Cama: como montar a sua</span>
+    </a>
+
+    <a class="btn reveal" href="https://www.instagram.com/cozyhomexangrila/" target="_blank" rel="noopener" data-track="Novidades">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg>
+      <span class="txt">Novidades da semana</span>
+    </a>
+
+    <a class="btn reveal" href="https://www.google.com/maps/search/?api=1&query=Av.+Paraguassú,+1889+-+Centro,+Xangri-lá+-+RS" target="_blank" rel="noopener" data-track="ComoChegar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+      <span class="txt">Como chegar até a loja<small>Av. Paraguassú, 1889 · Centro</small></span>
+    </a>
+
+    <a class="btn reveal" href="https://www.instagram.com/cozyhomexangrila/" target="_blank" rel="noopener" data-track="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <span class="txt">Instagram @cozyhomexangrila</span>
+    </a>
+  </nav>
+
+  <section class="curadoria reveal" aria-label="Marcas selecionadas">
+    <span class="mono">Curadoria</span>
+    <div class="marcas">
+      <span>Buddemeyer</span><span>Lenvie</span><span>Algodão egípcio</span><span>Home fragrance</span>
+    </div>
+  </section>
+
+  <address class="local reveal">
+    <strong>Av. Paraguassú, 1889 · Centro</strong>
+    Xangri-lá · RS
+  </address>
+
+  <footer>
+    <div class="mono">Xangri-lá · Litoral Norte · RS</div>
+    <a href="https://bio.jpstudio.tech" target="_blank" rel="noopener">site por JPStudio</a>
+  </footer>
+</main>
+
+<!-- Meta Pixel: troque SEU_PIXEL_ID pelo ID da conta de anúncios. Enquanto for o placeholder, nada é carregado. -->
+<script>
+(function(){
+  var PIXEL_ID = 'SEU_PIXEL_ID';
+  if(/^\d{6,}$/.test(PIXEL_ID)){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+  /* Eventos: clique no WhatsApp vira "Contact"; os outros botões viram cliques nomeados. */
+  document.getElementById('wa').addEventListener('click', function(){ if(window.fbq) fbq('track','Contact',{content_name:'WhatsApp'}); });
+  document.querySelectorAll('[data-track]').forEach(function(a){
+    a.addEventListener('click', function(){ if(window.fbq) fbq('trackCustom','LinkClick',{link:a.dataset.track}); });
+  });
+})();
+</script>
+</body>
+</html>

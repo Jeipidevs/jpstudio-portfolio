@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 250" width="520" height="250">
+    <!-- Fundo transparente -->
+    
+    <text x="10" y="55" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#FFFFFF" letter-spacing="1">IMOBILIÁRIA</text>
+    <text x="10" y="160" font-family="Arial, sans-serif" font-weight="900" font-size="120" fill="#FFFFFF" letter-spacing="-3">RE/MAX</text>
+    <text x="15" y="200" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#FFFFFF" letter-spacing="0">CRECI 33634-F</text>
+    <text x="300" y="235" font-family="Arial, sans-serif" font-weight="500" font-size="85" fill="#FFFFFF" letter-spacing="-3">VIP</text>
+</svg>
